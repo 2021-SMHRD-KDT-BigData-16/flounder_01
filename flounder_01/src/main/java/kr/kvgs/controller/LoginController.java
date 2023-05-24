@@ -1,7 +1,5 @@
 package kr.kvgs.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -12,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.kvgs.entity.Fuser;
 import kr.kvgs.mapper.BoardMapper;
@@ -25,10 +22,10 @@ public class LoginController {
 	private BoardMapper mapper;
 
 	@RequestMapping("/")
-	public String main(Locale locale, Model model) {
+	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		return "board/01_login";
+		return "board/00_intro";
 	}
 	
 	
@@ -37,14 +34,14 @@ public class LoginController {
 		logger.info("LoginController list {}", mvo);
 		logger.info("LoginController list email:{}, pw:{}", mvo.getUemail(), mvo.getUpw());
 		Fuser vo = mapper.login(mvo);
-//		if (vo != null) { // 회원인증에 성공
-//			session.setAttribute("mvo", vo);
-//		}
-//		return "redirect:/list";
 		if (vo != null) { // 회원인증에 성공
-			return "board/02_list";
+			session.setAttribute("mvo", vo);
+			logger.info("LoginController Login Success email:{} name:{}", vo.getUemail(), vo.getUname());
+			return "board/02_info";
 		} else
 		{
+			logger.info("LoginController Login Fail");
+			session.invalidate(); // 세션을 무효화
 			return "board/01_login";
 		}
 
@@ -54,7 +51,7 @@ public class LoginController {
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate(); // 세션을 무효화
-		return "redirect:/list";
+		return "00_intro";
 	}
 
 }
