@@ -118,5 +118,15 @@ CREATE TABLE dis_code (
 
 commit;
 
+insert into fuser values ('eee@eee.eee', 'eee', '관리자');
+insert into fuser values ('mks@kvgs.com', 'aaa', '문경수');
+insert into fuser values ('kkm@kvgs.com', 'aaa', '김권민');
+insert into fuser values ('amy@kvgs.com', 'aaa', '안미연');
+insert into fuser values ('shs@kvgs.com', 'aaa', '심형선');
+insert into fuser values ('cjy@kvgs.com', 'aaa', '조준용');
+
+commit;
+
+select * from fuser;
 
 

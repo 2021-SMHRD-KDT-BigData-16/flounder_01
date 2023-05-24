@@ -19,8 +19,9 @@
 				C:/TeamGit/Bamen_Sub/bamentum_03/logs/bamentum.log 
 				D:/Git/WebProject/bamentum_03/logs/bamentum.log
 				D:/Git/SpringStudy/BamentumRE_01/logs/bamentum.log 
+				C:\TeamGit\flounder_01\flounder_01
 			-->
-				C:/TeamGit/Bamentum_Main/BamentumRE_01/logs/bamentum.log 
+				C:/TeamGit/flounder_01/flounder_01/logs/flounder.log 
 			
 		</file>
 		<rollingPolicy
@@ -33,7 +34,7 @@
 					D:/Git/WebProject/bamentum_02/logs/bamentum_%d{yyyy-MM-dd}.%i.log
 					D:/Git/SpringStudy/BamentumRE_01/logs/bamentum_%d{yyyy-MM-dd}.%i.log
 				 -->
-					C:/TeamGit/Bamentum_Main/BamentumRE_01/logs/bamentum_%d{yyyy-MM-dd}.%i.log 
+					C:/TeamGit/flounder_01/flounder_01/logs/flounder_%d{yyyy-MM-dd}.%i.log 
 				
 			</fileNamePattern>
 
