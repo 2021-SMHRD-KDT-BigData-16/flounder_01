@@ -28,7 +28,7 @@
 	
 		<div class="card-body">
 		test
-		<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources/images/img027.jpg" ></p></td>
+		<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources/images/01_back.jpg" ></p></td>
 		
 		</div>
 			  
