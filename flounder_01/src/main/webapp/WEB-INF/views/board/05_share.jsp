@@ -44,7 +44,9 @@
 						<div class="card-body">
 							<h4 class="card-title">BOARD</h4>
 							<p class="card-text">제목</p>
-							게시판 콘텐츠가 들어가는 부분
+							게시판 콘텐츠가 들어가는 부분<br>
+							KJIKQJKQEJRQKJEWRQ
+							<img src="images/002.png" alt="rerere">
 						</div>
 					</div>
 				</div>
