@@ -11,5 +11,5 @@ public class Community {
 	private String 	m_name;
 	private String 	img_path;
 	private String 	c_text;
-	private String 	m_email;
+	private String 	w_email;
 }

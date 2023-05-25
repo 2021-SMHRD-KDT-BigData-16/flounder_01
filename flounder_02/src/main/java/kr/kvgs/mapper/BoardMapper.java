@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Select;
 
 import kr.kvgs.entity.Community;
+import kr.kvgs.entity.DetectDis;
 import kr.kvgs.entity.Member;
 
 public interface BoardMapper {
@@ -12,6 +13,7 @@ public interface BoardMapper {
 	@Select("select * from member where m_email=#{m_email} and m_pw=#{m_pw}")
 	public Member login(Member mvo);
 
+	public List<DetectDis> getHistory(Member mvo);
 	public List<Community> getCommunity();
 
 }

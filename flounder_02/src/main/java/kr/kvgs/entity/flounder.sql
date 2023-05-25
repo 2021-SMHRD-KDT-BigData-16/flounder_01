@@ -209,7 +209,22 @@ commit;
 
 select * from community;
 
-select c.c_id c_id, c.title title, c.c_date c_date, m.m_name m_name, c.img_path img_path, c.c_text c_text, m.m_email m_email  
+select c.c_id c_id, c.title title, c.c_date c_date, m.m_name m_name, c.img_path img_path, c.c_text c_text, c.w_email w_email  
 from community c, member m
-where c.w_email = m.m_email;
+where c.w_email = m.m_email
+order by c.c_date desc;
 
+
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20001, 'mks@kvgs.com', '2023/03/25 12:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R01_B01_I00000021.jpg',   '', '우리광어가 이상해요');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20002, 'mks@kvgs.com', '2023/03/26 11:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R02_B01_I00000021.jpg',   '', '얘가 좀 비실거리네요');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20003, 'mks@kvgs.com', '2023/03/27 10:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R03_B01_I00000021.jpg',   '', '이녀석 괜찮은 건가요');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20004, 'mks@kvgs.com', '2023/03/28 09:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R04_B01_I00000021.jpg',   '', '움직이지 않아서 찍어 봅니다.');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20005, 'mks@kvgs.com', '2023/03/29 08:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021.jpg',   '', '배까고 누웠어요');
+
+commit;
+
+    select d.dd_id dd_id, d.org_img org_img, d.dt_img dt_img, d.dd_email dd_email, 
+            d.dd_date dd_date, d.dd_comment dd_comment, m.m_name m_name
+        from detect_dis d, member m
+		where d.dd_email = m.m_email
+				order by d.dd_date desc;

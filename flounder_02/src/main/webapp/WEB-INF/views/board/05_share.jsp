@@ -42,10 +42,33 @@
 						</div>
 
 						<div class="card-body">
-							<h4 class="card-title">BOARD</h4>
-							<p class="card-text">제목</p>
-							  게시판 콘텐츠가 들어가는 부분
-							<img alt="이미지" height = 100px src="./resources/DATA/PostImage/bamen1.JPG" >
+						
+							<h4 class="card-title">커뮤니티 게시판</h4>
+							<table class="table table-bordered table-hover">
+								<thead>
+									<tr>
+										<td> 제목 </td>
+										<td> 작성일 </td>
+										<td> 작성자 </td>
+										<td> 사진 </td>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<c:forEach var="vo" items="${list_comm}">
+									
+										<tr>
+											<td> ${vo.title} </td>
+											<td> <fmt:formatDate value= "${vo.c_date}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
+											<td> ${vo.m_name} </td>
+											<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources${vo.img_path}" ></p></td>
+										</tr>
+								 		
+									</c:forEach>
+
+								</tbody>								
+							</table>
+							
 							
 						</div>
 					</div>
