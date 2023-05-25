@@ -8,9 +8,9 @@
 <div class="card">
 							<div class="btn-group btn-group-lg" role="group"
 								aria-label="Large button group">
-								<button type="button" class="btn btn-outline-dark">질병감지</button>
-								<button type="button" class="btn btn-outline-dark">정보공유</button>
-								<button type="button" class="btn btn-outline-dark">질병검색</button>
-								<button type="button" class="btn btn-outline-dark">히스토리</button>
+								<button type="button" class="btn btn-outline-dark" onClick="location.href='./03'">질병감지</button>
+								<button type="button" class="btn btn-outline-dark" onClick="location.href='./community'">정보공유</button>
+								<button type="button" class="btn btn-outline-dark" onClick="location.href='./04'">질병검색</button>
+								<button type="button" class="btn btn-outline-dark" onClick="location.href='./history'">히스토리</button>
 							</div>
 </div>

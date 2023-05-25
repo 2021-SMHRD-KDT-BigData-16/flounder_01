@@ -5,6 +5,7 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,11 +41,8 @@
 						<div class="card-header">
 							<jsp:include page="96_menu_btn.jsp" />
 						</div>
-
+						
 						<div class="card-body">
-  						<td> <p> <img alt="이미지" height = 100px src="./resources/DATA/DetectImg/img059.jpg" ></p></td>
-						
-						
 							<h4 class="card-title">히스토리 게시판</h4>
 							<table class="table table-bordered table-hover">
 								<thead>

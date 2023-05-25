@@ -1,15 +1,29 @@
 package kr.kvgs.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.kvgs.entity.Community;
+import kr.kvgs.entity.DetectDis;
+import kr.kvgs.entity.Member;
+import kr.kvgs.mapper.BoardMapper;
 
 
 @Controller  // 컨트롤러로 인식을한다.
 public class TestController {
 	private static final Logger logger = LoggerFactory.getLogger(TestController.class);
+	@Autowired
+	private BoardMapper mapper;
 
+	
 	   @RequestMapping("/00")
 	   public String test00() {
 			logger.info(" TestController : {}.", "test00");
@@ -46,11 +60,15 @@ public class TestController {
 	   }
 	   
 	   @RequestMapping("/05")
-	   public String test05() {
+		public String test05(Model model) {
 			logger.info(" TestController : {}.", "test05");
 			
+			List<Community> list_comm = mapper.getCommunity();
+			model.addAttribute("list_comm", list_comm);
+			
 			return "board/05_share";
-	   }
+		}
+
 	   
 	   @RequestMapping("/06")
 	   public String test06() {
@@ -60,11 +78,18 @@ public class TestController {
 	   }
 	   
 	   @RequestMapping("/07")
-	   public String test07() {
-			logger.info(" TestController : {}.", "test07");
+		public String test07(Model model, HttpSession session) {
+			logger.info("BoardController history");
+			Member mvo;
+			
+			mvo = (Member) session.getAttribute("mvo");
+			logger.info(" history email : {}, name : {}", mvo.getM_email(), mvo.getM_name());
+			
+			List<DetectDis> list_detect = mapper.getHistory(mvo);
+			model.addAttribute("list_detect", list_detect);
 			
 			return "board/07_history";
-	   }
+		}
 	   
 	   @RequestMapping("/08")
 	   public String test08() {

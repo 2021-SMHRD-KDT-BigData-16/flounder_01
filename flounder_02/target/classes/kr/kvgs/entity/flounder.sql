@@ -215,11 +215,11 @@ where c.w_email = m.m_email
 order by c.c_date desc;
 
 
-insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20001, 'mks@kvgs.com', '2023/03/25 12:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R01_B01_I00000021.jpg',   '', '우리광어가 이상해요');
-insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20002, 'mks@kvgs.com', '2023/03/26 11:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R02_B01_I00000021.jpg',   '', '얘가 좀 비실거리네요');
-insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20003, 'mks@kvgs.com', '2023/03/27 10:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R03_B01_I00000021.jpg',   '', '이녀석 괜찮은 건가요');
-insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20004, 'mks@kvgs.com', '2023/03/28 09:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R04_B01_I00000021.jpg',   '', '움직이지 않아서 찍어 봅니다.');
-insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20005, 'mks@kvgs.com', '2023/03/29 08:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021.jpg',   '', '배까고 누웠어요');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20001, 'mks@kvgs.com', '2023/03/25 12:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R01_B01_I00000021.JPG',   '', '우리광어가 이상해요');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20002, 'mks@kvgs.com', '2023/03/26 11:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R02_B01_I00000021.JPG',   '', '얘가 좀 비실거리네요');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20003, 'mks@kvgs.com', '2023/03/27 10:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R03_B01_I00000021.JPG',   '', '이녀석 괜찮은 건가요');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20004, 'mks@kvgs.com', '2023/03/28 09:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R04_B01_I00000021.JPG',   '', '움직이지 않아서 찍어 봅니다.');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20005, 'mks@kvgs.com', '2023/03/29 08:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021.JPG',   '', '배까고 누웠어요');
 
 commit;
 
