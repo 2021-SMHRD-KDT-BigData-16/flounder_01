@@ -27,10 +27,13 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<script type="text/javascript">
+<!-- 여기부터 -->
+<script
+   src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+   src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- 여기까지 -->
 
-
-</script>
 </head>
 <body>
 
@@ -60,21 +63,30 @@
 
 <!-- 질병검색 -->
 						<div class="card-body">
+						<form class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px ">
+         <input class="form-control mr-sm-2" type="search" name="str_search" placeholder="Search" aria-label="Search" >
+         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+      </form>
 							<h4 class="card-title">질병검색</h4>
+
+
 
 							<div class="input-group mb-3">
 							
 							
 							
+							 
 							
-
+							
+<!--  
           <form action="${cpath}/search" method="post">
             <div class="form-group">
-              <input type="text" name="str_search" class="form-control" >
+              <input type="text" name="str_search" class="form-control" placeholder="검색어를 입력해 주세요">
             </div>
             <button class="btn btn-primary">검색</button>
+            
           </form>
-					
+-->					
 					
 					
 					
@@ -89,13 +101,13 @@
 								</thead>
 								
 								<tbody>
-									<c:forEach var="vo" items="${list_comm}">
+									<c:forEach var="vo" items="${list_search}">
 									
 										<tr>
-											<td> ${} </td>
-											<td> <fmt:formatDate value= "${vo.c_date}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
-											<td> ${vo.m_name} </td>
-											<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources${vo.img_path}" ></p></td>
+											<td> ${vo.ds_name} </td>
+											<td> ${vo.ds_simple}</td>
+											<td> ${vo.ds_cause}</td>
+											<td> 상세보기</td>
 										</tr>
 								 		
 									</c:forEach>
@@ -119,8 +131,6 @@
 								
 							</div>
 <!-- 질병검색 끝 -->
-							<p class="card-text">제목</p>
-							게시판 콘텐츠가 들어가는 부분
 						</div>
 					</div>
 				</div>
