@@ -29,7 +29,7 @@
 		<property name="password" value="flounder"/>
 	</bean>
  -->	
-	
+ 
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="jdbcUrl" value="jdbc:mysql://project-db-stu.smhrd.com:3307/cgi_3_230524_3"/>
