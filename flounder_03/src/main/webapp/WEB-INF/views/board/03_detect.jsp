@@ -21,6 +21,11 @@
 </head>
 <body>
 
+<div class="card-header">
+	<jsp:include page="96_menu_btn.jsp" />
+</div>
+
+
 	<div class="card">
 		<div class="card-header">
 			<div class="jumbotron jumbotron-fluid">
@@ -36,9 +41,6 @@
 				</div>
 				<div class="col-lg-7">
 					<div class="card">
-						<div class="card-header">
-							<jsp:include page="96_menu_btn.jsp" />
-						</div>
 
 						<div class="card-body">
 							<h4 class="card-title">BOARD</h4>

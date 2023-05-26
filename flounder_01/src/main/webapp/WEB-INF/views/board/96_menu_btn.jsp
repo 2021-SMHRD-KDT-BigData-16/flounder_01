@@ -5,12 +5,31 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
-<div class="card">
-							<div class="btn-group btn-group-lg" role="group"
-								aria-label="Large button group">
-								<button type="button" class="btn btn-outline-dark">질병감지</button>
-								<button type="button" class="btn btn-outline-dark">정보공유</button>
-								<button type="button" class="btn btn-outline-dark">질병검색</button>
-								<button type="button" class="btn btn-outline-dark">히스토리</button>
-							</div>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000A2E;">
+   <a class="navbar-brand" href="#">02 Info</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+   </button>
+         <div class="collapse navbar-collapse justify-content-center" id="navbarNav"> <!-- 업데이트: justify-content-center 클래스 추가 -->
+      <ul class="navbar-nav"> <!-- mr-auto 클래스를 제거하여 메뉴 항목을 가운데로 정렬 -->
+   <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+         <li class="nav-item">
+            <a class="nav-link" href="#">Disease Detection</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="#">History</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="#">Disease Search</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="#">Information Sharing</a>
+         </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" style="position: absolute; right: 0;">
+         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+      </form>
+   </div>
+</nav>
