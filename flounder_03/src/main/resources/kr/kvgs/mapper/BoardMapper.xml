@@ -23,5 +23,10 @@
 				order by d.dd_date desc
     		
 	</select>
+	
+		<select id="getSearch" resultType = "kr.kvgs.entity.Dis_search"
+	                        parameterType="String">
+		select * from dis_search where ds_name like CONCAT('%', #{str_search}, '%')
+	</select>
 
 </mapper>

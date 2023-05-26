@@ -256,6 +256,8 @@ select d.dd_id dd_id, d.org_img org_img, d.dt_img dt_img, d.dd_email dd_email,
     from detect_dis d, member m
 	where d.dd_email = m.m_email
 			order by d.dd_date desc;
+			
+
 
 				
 				

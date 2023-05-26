@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Select;
 
 import kr.kvgs.entity.Community;
 import kr.kvgs.entity.DetectDis;
+import kr.kvgs.entity.Dis_search;
 import kr.kvgs.entity.Member;
 
 public interface BoardMapper {
@@ -15,5 +16,6 @@ public interface BoardMapper {
 
 	public List<DetectDis> getHistory(Member mvo);
 	public List<Community> getCommunity();
+	public List<Dis_search> getSearch(String str_search);
 
 }
