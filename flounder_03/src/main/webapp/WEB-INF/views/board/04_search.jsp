@@ -63,10 +63,11 @@
 
 <!-- 질병검색 -->
 						<div class="card-body">
-						<form class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px ">
-         <input class="form-control mr-sm-2" type="search" name="str_search" placeholder="Search" aria-label="Search" >
-         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-      </form>
+						
+						<form action="${cpath}/search" method="post" class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px ">
+              <input class="form-control mr-sm-2" type="search" name="str_search" placeholder="Search" aria-label="Search" >
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
 							<h4 class="card-title">질병검색</h4>
 
 
