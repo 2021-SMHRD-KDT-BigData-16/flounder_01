@@ -1,9 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    
-<div class="card" style="min-height: 500px; max-height: 1000px">
+    <style>
+    	.card{
+		
+		min-height: 400px;
+	 	max-height: 1600px
+		}
+    </style>
+	<div class="card" >
 	<div class="card-body">
-		<h4 class="card-title">Right</h4>
+		<h4 class="card-title">광고banner</h4>
+	  <img src="./resources/images/right.jpg" alt="광고배너">
 	</div>
 </div>

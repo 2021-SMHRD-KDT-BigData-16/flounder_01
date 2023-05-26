@@ -20,19 +20,9 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<div class="card-header">
+
 	<jsp:include page="96_menu_btn.jsp" />
-</div>
 
-
-	<div class="card">
-		<div class="card-header">
-			<div class="jumbotron jumbotron-fluid">
-				<div class="container">
-					<h1> 04 search </h1>
-				</div>
-			</div>
-		</div>
 		<div class="card-body">
 			<div class="row">
 				<div class="col-lg-2">

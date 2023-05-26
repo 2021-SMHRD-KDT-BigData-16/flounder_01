@@ -22,18 +22,11 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<div class="card-header">
-	<jsp:include page="96_menu_btn.jsp" />
-</div>
 
-	<div class="card">
-		<div class="card-header">
-			<div class="jumbotron jumbotron-fluid">
-				<div class="container">
-					<h1> 07 history </h1>
-				</div>
-			</div>
-		</div>
+	<jsp:include page="96_menu_btn.jsp" />
+
+
+
 		<div class="card-body">
 			<div class="row">
 				<div class="col-lg-2">
@@ -61,7 +54,7 @@
 											<td> ${vo.dd_comment} </td>
 											<td> <fmt:formatDate value= "${vo.dd_date}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
 											<td> ${vo.m_name} </td>
-											<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources${vo.org_img}" ></p></td>
+											<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources ${vo.org_img}" ></p></td>
 										</tr>
 								 		
 									</c:forEach>

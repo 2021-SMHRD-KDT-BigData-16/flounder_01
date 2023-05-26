@@ -21,14 +21,7 @@
 </head>
 <body>
 
-	<div class="card">
-		<div class="card-header">
-			<div class="jumbotron jumbotron-fluid">
-				<div class="container">
-					<h1>KVGS Project</h1>
-				</div>
-			</div>
-		</div>
+
 		<div class="card-body">
 			<div class="row">
 				<div class="col-lg-2">
