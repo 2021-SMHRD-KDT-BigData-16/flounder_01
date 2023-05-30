@@ -33,17 +33,23 @@
   <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#" onClick="location.href='./03'">Disease Detection</a>
+        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '질병 검출')" onMouseOut="showKoreanText(this, 'Disease Detection')" onClick="location.href='./03'">Disease Detection</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" onClick="location.href='./07'">Disease History</a>
+        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '질병 히스토리')" onMouseOut="showKoreanText(this, 'Disease History')" onClick="location.href='./07'">Disease History</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" onClick="location.href='./04'">Disease Search</a>
+        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '질병 검색')" onMouseOut="showKoreanText(this, 'Disease Search')" onClick="location.href='./04'">Disease Search</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" onClick="location.href='./05'">Information Sharing</a>
+        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '정보 공유')" onMouseOut="showKoreanText(this, 'Information Sharing')" onClick="location.href='./05'">Information Sharing</a>
       </li>
+   </ul>
+   <script>
+  function showKoreanText(element, text) {
+    element.textContent = text;
+  }
+</script>
     </ul>
     <form class="form-inline my-2 my-lg-0" style="position: absolute; right: 20px;">
       <button class="btn btn-outline-light my-2 my-sm-0" type="button" data-toggle="collapse" data-target="#menuCollapse" aria-controls="menuCollapse" aria-expanded="false">
