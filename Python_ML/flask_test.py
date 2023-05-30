@@ -6,6 +6,8 @@ import os
 import cv2
 import matplotlib.pyplot as plt
 
+from flask import send_file
+
 app = Flask(__name__)
 
 
@@ -66,20 +68,44 @@ def user():
 def process_image():
     file = request.files['image']
     # file_name = 'static/uploads/' + secure_filename(file.filename)
-    file_name = secure_filename(file.filename)
-    file.save(file_name)
+    # file_name = secure_filename(file.filename)
+    org_file_name = secure_filename(file.filename)
+    save_file_name = './images/' + org_file_name
+    file.save(save_file_name)
 
     # img = Image.open(io.BytesIO(file.read()))
     # # 이미지 처리 코드를 이 곳에 작성...
 
-    image = cv2.imread(file_name)
-    image2 = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    plt.figure(figsize=(12, 10))
-    plt.imshow(image2)
-    plt.show()
+    rec_file_name = './images/rec_' + org_file_name
+
+    image = cv2.imread(save_file_name)
+    cv2.rectangle(image, (100, 100), (300, 300), (0, 255, 0), 10)
+    cv2.imwrite(rec_file_name, image)
 
     #result = perform_some_operation(img)
-    return {'result': "result = 0"}
+    return {'rec_file_name': rec_file_name}
+
+
+@app.route('/return_image', methods=['POST'])
+def return_image():
+    file = request.files['image']
+    # file_name = 'static/uploads/' + secure_filename(file.filename)
+    # file_name = secure_filename(file.filename)
+    org_file_name = secure_filename(file.filename)
+    save_file_name = './images/' + org_file_name
+    file.save(save_file_name)
+
+    # img = Image.open(io.BytesIO(file.read()))
+    # # 이미지 처리 코드를 이 곳에 작성...
+
+    rec_file_name = './images/rec_' + org_file_name
+
+    image = cv2.imread(save_file_name)
+    cv2.rectangle(image, (100, 100), (300, 300), (0, 255, 0), 10)
+    cv2.imwrite(rec_file_name, image)
+
+    #result = perform_some_operation(img)
+    return send_file(rec_file_name)
 
 
 if __name__ == '__main__':
