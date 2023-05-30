@@ -22,32 +22,26 @@ pageEncoding="UTF-8"%>
   
   <body>
   
-  
-<!--   
-        <form action="http://localhost:80/fileUpload" method="POST" enctype = "multipart/form-data">
-        <input type = "file" name = "file" />
-        <a href="/view" onclick="return confirm('제출 성공! \n업로드한 이미지를 확인합니다.');">제출하기</a>  
- -->
- 
      
     <div class="card-body">
       <div class="row">
         
         <div class="col-lg-6">
           <div class="card">
-              <div class="row justify-content-center">
-                 <form action="http://121.179.7.40:5000/process_image" method="post" enctype="multipart/form-data">
-                     <div class="form-group">
-                       <label>내용:</label>
-                       <input type="text" name="title" />
-                     </div>
-                     <div class="form-group">
-                       <label>업로드 이미지:</label>
-                       <input type="file" name="image" />
-                     </div>
-                     <button type="submit" class="btn btn-sm btn-primary">플라스크 upload</button>
-                 </form>
-              </div>
+          
+	          <div class="row justify-content-center">
+	             <form action="http://121.179.7.40:5000/process_image" method="post" enctype="multipart/form-data">
+	                 <div class="form-group">
+	                   <label>내용:</label>
+	                   <input type="text" name="title" />
+	                 </div>
+	                 <div class="form-group">
+	                   <label>업로드 이미지:</label>
+	                   <input type="file" name="image" />
+	                 </div>
+	                 <button type="submit" class="btn btn-sm btn-primary">플라스크 upload</button>
+	             </form>
+	          </div>
               
             </div>
           </div>

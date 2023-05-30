@@ -3,6 +3,8 @@ from PIL import Image
 import io
 from werkzeug.utils import secure_filename
 import os
+import cv2
+import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
@@ -63,11 +65,18 @@ def user():
 @app.route('/process_image', methods=['POST'])
 def process_image():
     file = request.files['image']
-    file.save('static/uploads/' + secure_filename(file.filename))
-    files = os.listdir("static/uploads")
+    # file_name = 'static/uploads/' + secure_filename(file.filename)
+    file_name = secure_filename(file.filename)
+    file.save(file_name)
 
-    img = Image.open(io.BytesIO(file.read()))
-    # 이미지 처리 코드를 이 곳에 작성...
+    # img = Image.open(io.BytesIO(file.read()))
+    # # 이미지 처리 코드를 이 곳에 작성...
+
+    image = cv2.imread(file_name)
+    image2 = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    plt.figure(figsize=(12, 10))
+    plt.imshow(image2)
+    plt.show()
 
     #result = perform_some_operation(img)
     return {'result': "result = 0"}
