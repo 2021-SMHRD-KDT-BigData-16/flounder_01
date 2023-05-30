@@ -80,9 +80,6 @@ pageEncoding="UTF-8"%>
                   </tbody>								
                 </table>
                 
-                
-                
-                
                 <!-- 							
                   <form action="${cpath}/search" method="post">
                   <input type="text" name="str_search" class="form-control" id="dis_search"
@@ -92,7 +89,6 @@ pageEncoding="UTF-8"%>
                   </div>
                   </form>
                 -->								
-								
 								
               </div>
               <!-- 질병검색 끝 -->

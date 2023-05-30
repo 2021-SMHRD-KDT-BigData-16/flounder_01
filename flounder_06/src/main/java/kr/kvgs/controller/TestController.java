@@ -105,4 +105,11 @@ public class TestController {
 			return "board/99_template";
 	   }
 
+	   @RequestMapping("/51")
+	   public String test51() {
+			logger.info(" TestController : {}.", "test99");
+			
+			return "board/51_img_file_up";
+	   }
+
 }

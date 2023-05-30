@@ -65,35 +65,6 @@ public class BoardController {
 	}
 
     // 파일전송 요청을 처리하기 위한 컨트롤러
-    @RequestMapping("/upload")
-    public String getFile(HttpServletRequest request, Model model,  MultipartFile file){
-        String fileName = file.getOriginalFilename(); 
-        long fileSize = file.getSize();
-        
-        String imagePath = request.getServletContext().getRealPath("/");
-        String fileFullPath = imagePath + file.getOriginalFilename();
-		logger.info("BoardController getFile imagePath : {}, FullPath : {}", imagePath, fileFullPath);
-         
-		File UploadFolder = new File(imagePath);
-        try{
-    		if( !UploadFolder.exists() ) {
-    			logger.info("BoardController getFile imagePath : {} not exist", imagePath);
-    			UploadFolder.mkdir();
-    		}
-        
-			logger.info("BoardController getFile FullPath : {}, FileSize : {}", fileFullPath, fileSize);
-	        File destination = new File(fileFullPath);
-	        file.transferTo(destination);
-        }catch (Exception e){
-        	logger.info("에러 : " + e.getMessage());
-        }finally {
-        	
-        }
-         
-        return "board/03_detect";
-    }	
-	
-    // 파일전송 요청을 처리하기 위한 컨트롤러
     @RequestMapping("/dd_register")	
     public String dd_register(DetectDis vo, MultipartFile file, HttpServletRequest request, Model model){
 		logger.info("BoardController dd_register dd_email : {}, dd_comment : {}", vo.getDd_email(), vo.getDd_comment());
@@ -105,8 +76,7 @@ public class BoardController {
 		String fileExt = fileName.substring(fileName.lastIndexOf("."), fileName.length());
 		
 		UUID uuid = UUID.randomUUID();
-		String[] uuids = uuid.toString().split("-");
-		String uniqueName = uuids[0];
+		String uniqueName = uuid.toString();
 		
         String fileFullPath = imagePath + "resources\\DATA\\DetectImg\\" + uniqueName + fileExt;
         String fileSaveDB = "/DATA/DetectImg/" + uniqueName + fileExt;
@@ -132,6 +102,6 @@ public class BoardController {
         vo.setOrg_img(fileSaveDB);
 		int iRet = mapper.dd_insert(vo);
         
-        return "board/03_detect";
+        return "board/07_history";
     }	
 }
