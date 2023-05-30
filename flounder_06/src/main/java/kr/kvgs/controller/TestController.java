@@ -98,6 +98,12 @@ public class TestController {
 			return "board/08_history_detail";
 	   }
 
+	   @RequestMapping("/09")
+	   public String test09() {
+			logger.info(" TestController : {}.", "test09");
+			
+			return "board/09_search_detail";
+	   }
 	   @RequestMapping("/99")
 	   public String test99() {
 			logger.info(" TestController : {}.", "test99");

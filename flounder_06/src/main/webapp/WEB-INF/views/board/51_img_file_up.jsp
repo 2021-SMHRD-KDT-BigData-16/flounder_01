@@ -43,7 +43,27 @@ pageEncoding="UTF-8"%>
 	             </form>
 	          </div>
               
-            </div>
+          </div>
+          
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card">
+          
+	          <div class="row justify-content-center">
+	             <form action="http://121.179.7.40:5000/return_image" method="post" enctype="multipart/form-data">
+	                 <div class="form-group">
+	                   <label>내용:</label>
+	                   <input type="text" name="title" />
+	                 </div>
+	                 <div class="form-group">
+	                   <label>업로드 이미지:</label>
+	                   <input type="file" name="image" />
+	                 </div>
+	                 <button type="submit" class="btn btn-sm btn-primary">플라스크 upload</button>
+	             </form>
+	          </div>
+              
           </div>
           
         </div>

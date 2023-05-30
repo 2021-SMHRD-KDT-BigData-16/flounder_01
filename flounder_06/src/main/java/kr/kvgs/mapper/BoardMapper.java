@@ -17,6 +17,7 @@ public interface BoardMapper {
 	public List<DetectDis> getHistory(Member mvo);
 	public List<Community> getCommunity();
 	public List<Dis_search> getSearch(String str_search);
+	public String getDsDetail(int ds_id);
 
 	public int dd_insert(DetectDis vo);
 	
