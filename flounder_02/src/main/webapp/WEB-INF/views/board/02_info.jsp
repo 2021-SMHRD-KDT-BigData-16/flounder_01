@@ -20,35 +20,8 @@
    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+<jsp:include page="96_menu_btn.jsp" />
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000A2E;">
-   <a class="navbar-brand" href="#">02 Info</a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-   </button>
-         <div class="collapse navbar-collapse justify-content-center" id="navbarNav"> <!-- 업데이트: justify-content-center 클래스 추가 -->
-      <ul class="navbar-nav"> <!-- mr-auto 클래스를 제거하여 메뉴 항목을 가운데로 정렬 -->
-   <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
-         <li class="nav-item">
-            <a class="nav-link" onClick="location.href='./03'">Disease Detection</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" onClick="location.href='./07'">Disease History</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" onClick="location.href='./04'">Disease Search</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" onClick="location.href='./05'">Information Sharing</a>
-         </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px ">
-         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
-         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-      </form>
-   </div>
-</nav>
 <div class="card-body">
 			<div class="row">
 				<div class="col-lg-3">
