@@ -95,7 +95,8 @@ CREATE TABLE dis_search (
 	ds_id	    INT	            NOT NULL AUTO_INCREMENT,
 	ds_name	    VARCHAR(100)	NOT NULL,
 	ds_simple   VARCHAR(500)	NOT NULL,
-	ds_url	    VARCHAR(500)	NOT NULL
+	ds_url	    VARCHAR(500)	NOT NULL,
+    ds_cause    VARCHAR(100)    DEFAULT NULL
 	
     , PRIMARY KEY (ds_id)
 );
@@ -243,11 +244,11 @@ where c.w_email = m.m_email
 order by c.c_date desc;
 
 
-insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20001, 'mks@kvgs.com', '2023/03/25 12:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R01_B01_I00000021.JPG',   '', '우리광어가 이상해요');
-insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20002, 'mks@kvgs.com', '2023/03/26 11:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R02_B01_I00000021.JPG',   '', '얘가 좀 비실거리네요');
-insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20003, 'mks@kvgs.com', '2023/03/27 10:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R03_B01_I00000021.JPG',   '', '이녀석 괜찮은 건가요');
-insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20004, 'mks@kvgs.com', '2023/03/28 09:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R04_B01_I00000021.JPG',   '', '움직이지 않아서 찍어 봅니다.');
-insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (20005, 'mks@kvgs.com', '2023/03/29 08:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021.JPG',   '', '배까고 누웠어요');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (2001, 'mks@kvgs.com', '2023/03/25 12:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R01_B01_I00000021.JPG',   '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R01_B01_I00000021_bbox.JPG', '우리광어가 이상해요');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (2002, 'mks@kvgs.com', '2023/03/26 11:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R02_B01_I00000021.JPG',   '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R02_B01_I00000021_bbox.JPG', '얘가 좀 비실거리네요');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (2003, 'mks@kvgs.com', '2023/03/27 10:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R03_B01_I00000021.JPG',   '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R03_B01_I00000021_bbox.JPG', '이녀석 괜찮은 건가요');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (2004, 'mks@kvgs.com', '2023/03/28 09:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R04_B01_I00000021.JPG',   '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R04_B01_I00000021_bbox.JPG', '움직이지 않아서 찍어 봅니다.');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (2005, 'mks@kvgs.com', '2023/03/29 08:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021.JPG',   '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021_bbox.JPG', '배까고 누웠어요');
 
 commit;
 
@@ -258,9 +259,6 @@ select d.dd_id dd_id, d.org_img org_img, d.dt_img dt_img, d.dd_email dd_email,
 			order by d.dd_date desc;
 			
 
-insert into detect_dis (dd_email, org_img, dd_comment) values ('mks@kvgs.com', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021.JPG', '배까고 누웠어요');
-
-				
 insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('림포시스티스', '머리 및 체표 전체의 지느러미에 종양이 생성', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IV001&fshCd=611301', '바이러스성질병');
 insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('바이러스성 신경괴사증', '신경세포에 감염되어 신경조직을 괴사시켜 대량폐사를 유발하고 수직감염에 의해 전염', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IV007&fshCd=611301', '바이러스성질병');
 insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('바이러스성 출혈성 패혈증 바이러스', '체색흑화, 복수저류로 인한 복부팽만과 탈장, 아가미 퇴색 등이 관찰', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IV009&fshCd=611301', '바이러스성질병');
@@ -271,7 +269,9 @@ insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('상피증
 insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('스쿠티카병', '표피가 박리되고 근육층이 노출되는 궤양증, 체표 염증, 지느러미 연조 및 꼬리자루 노출, 두부손상', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IP007&fshCd=611301', '기생충성질병');
 insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('에드워드병', '수류를 따라 빙빙 도는 행동, 체색 흑화, 지느러미 및 복부 발적 및 충혈, 복부팽만, 탈장', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IB004&fshCd=611301', '세균성질병');			
 				
-				
+commit;
+
+select * from dis_search;				
 				
 				
 				
