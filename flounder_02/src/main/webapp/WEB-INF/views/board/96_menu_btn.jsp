@@ -6,12 +6,12 @@
 
 <style>
   .nav-item:hover .nav-link::after {
-    content: attr(data-korean-name); /* Show Korean translation as pseudo-element content */
+    content: attr(data-korean-name);
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #000A2E; /* Set background color to #000A2E */
+    background-color: #000A2E; 
     color: white;
     padding: 5px;
     border-radius: 3px;

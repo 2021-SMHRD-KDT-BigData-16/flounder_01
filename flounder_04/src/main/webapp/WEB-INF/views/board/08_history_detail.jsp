@@ -46,8 +46,7 @@ pageEncoding="UTF-8"%>
         </div>
       </div>
     </div>
-		<div class="card-footer">권벤저스</div>
-  </div>
+		
   
 </body>
 </html>

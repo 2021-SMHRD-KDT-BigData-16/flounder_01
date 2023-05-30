@@ -103,9 +103,7 @@ pageEncoding="UTF-8"%>
 					<jsp:include page="97_right.jsp" />
         </div>
       </div>
-    </div>
-		<div class="card-footer">권벤저스</div>
-  </div>
+
   
 </body>
 </html>

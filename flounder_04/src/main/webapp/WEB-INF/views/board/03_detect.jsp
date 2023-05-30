@@ -18,6 +18,24 @@ pageEncoding="UTF-8"%>
     src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    .custom-file-input {
+      cursor: pointer;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      opacity: 0;
+    }
+    
+    .custom-file-label {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  </style>
   </head>
   
   <body>
@@ -26,11 +44,11 @@ pageEncoding="UTF-8"%>
     <div class="card-body">
       <div class="row">
       
-        <div class="col-lg-3">
+        <div class="col-lg-2">
           <jsp:include page="98_left.jsp" />
         </div>
         
-        <div class="col-lg-6">
+        <div class="col-lg-7">
           <div class="card">
             <div class="card-header" style="text-align: center;">
               <h4 class="card-title">넙치질병 증상감지 BOARD</h4>
@@ -46,18 +64,22 @@ pageEncoding="UTF-8"%>
                      <div class="form-group">
                        <label>업로드 이미지:</label>
                        <input type="file" name="file" id="file" />
-                     </div>
-                     <button type="submit" class="btn btn-sm btn-primary">등록</button>
-                     <button type="reset" class="btn btn-sm btn-primary">취소</button>
-                 </form>
+                       
+                  <!-- <div class="form-group">
+							      <label>업로드 이미지:</label>
+							      <div class="custom-file">
+							        <input type="file" class="custom-file-input" id="file" name="file">
+							        <label class="custom-file-label" for="file">파일 선택</label>
+                     </div>--> 
+                   </div>
+                 
                 
+                     <button type="submit" class="btn btn-sm btn-primary" style="width: 45%; font-size: 0.8em;">등록</button>
+                     <button type="reset" class="btn btn-sm btn-primary" style="width: 45%; font-size: 0.8em;">취소</button>
+                 </form>
               </div>
-              
             </div>
           </div>
-          
-        </div>
-        
 		    <div class="col-lg-3" >
 			    <jsp:include page="97_right.jsp" />
         </div>

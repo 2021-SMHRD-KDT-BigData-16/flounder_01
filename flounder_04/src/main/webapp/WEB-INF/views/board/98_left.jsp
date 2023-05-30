@@ -20,7 +20,7 @@
   }
 </style>
 <body>
-<div class="card" style="min-height: 500px; max-height: 1600px;">
+<div class="card" >
   <div class="row">
     <div class="card-body text-center">
       <h4 class="card-title">LEFT</h4>

@@ -9,7 +9,21 @@ pageEncoding="UTF-8"%>
 <html lang="en">
   
   <head>
-    
+    <style>
+  .btn-primary {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #000a2e;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+  }
+   .btn-primary:hover {
+    background-color: none;
+    cursor: pointer;
+  }
+</style>
     <title> 04 search </title>
     
     <meta charset="utf-8">
@@ -31,6 +45,9 @@ pageEncoding="UTF-8"%>
     <!-- 여기까지 -->
     
   </head>
+  <style>
+   
+    </style>
   <body>
     
     <jsp:include page="96_menu_btn.jsp" />
@@ -45,15 +62,17 @@ pageEncoding="UTF-8"%>
 					<div class="card">
             
             <!-- 질병검색 -->
-						<div class="card-body">
-              
-              <form action="${cpath}/search" method="post" class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px ">
+						<div class="card-body" style="position: relative;">
+							<h4 class="card-title">질병검색</h4>
+               
+               <form action="${cpath}/search" method="post" class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px ">
                 <input class="form-control mr-sm-2" type="search" name="str_search" placeholder="Search" aria-label="Search" >
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
               </form>
-							<h4 class="card-title">질병검색</h4>
-              
-							<div class="input-group mb-3">
+                  </br>
+                  </br>
+                 
+                 
                 
                 <table class="table table-bordered table-hover">
                   <thead>
@@ -98,14 +117,12 @@ pageEncoding="UTF-8"%>
               <!-- 질병검색 끝 -->
             </div>
           </div>
-        </div>
+       
 				<div class="col-lg-3">
 					<jsp:include page="97_right.jsp" />
         </div>
       </div>
-    </div>
-		<div class="card-footer">권벤저스</div>
-  </div>
+
   
 </body>
 </html>

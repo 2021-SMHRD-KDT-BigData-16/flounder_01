@@ -3,7 +3,6 @@
     
     <style>
     	.card{
-		
 		min-height: 400px;
 	 	max-height: 1600px
 		}
