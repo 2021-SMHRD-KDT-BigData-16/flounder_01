@@ -54,43 +54,10 @@ pageEncoding="UTF-8"%>
 							<h4 class="card-title">질병검색</h4>
               
 							<div class="input-group mb-3">
-							
-                <table class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <td> 병명 </td>
-                      <td> 증상 </td>
-                      <td> 원인체 </td>
-                      <!-- <td> 상세증상 </td> -->
-                      <td> URL 이동 </td>
-                    </tr>
-                  </thead>
-                  
-                  <tbody>
-                    <c:forEach var="vo" items="${list_search}">
-                      <tr>
-                        <td> ${vo.ds_name} </td>
-                        <td> ${vo.ds_simple}</td>
-                        <td> ${vo.ds_cause}</td>
-                        <!-- <td><button onclick="display()">상세보기</button></td> -->
-                        <!-- <td><a href="${vo.ds_url}">상세보기</a></td> -->
-                        <form action="${cpath}/search_detail" method="post" class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px ">
-                        	<input type="hidden" name="ds_id" value="${vo.ds_id}">
-                        	<td><button type="submit">상세보기</button></td>
-                        </form>
-                      </tr>
-		                 
-		                 <!--  
-		                 	<tr>    
-	                      <td id="${vo.ds_id}" style="display: none">url창 생성</td>
-	                    </tr> 
-											-->
-											
-                    </c:forEach>
-                    
-                  </tbody>								
-                </table>
-                
+<!--  								
+                <iframe src="${list_search[0].ds_url}" ></iframe>
+ -->                
+                <iframe src="${search_url}" ></iframe>
                 
                 
                 
@@ -118,24 +85,13 @@ pageEncoding="UTF-8"%>
 		<div class="card-footer">권벤저스</div>
   </div>
  <script>
- 
-//	function display(){
-//		if($("#${vo.ds_id}").css("display")=="none"){
-//			$("#${vo.ds_id}").css("display", "block")
-//		}else{
-//			$("#${vo.ds_id}").css("display", "none")
-//		}
-//	}
-
-$(".move").on("click", function(e){ 
-				e.preventDefault(); // a tag의 고유한 기능을 막는 방법
-				var num = $(this).attr("href");
-				var tag = "<input type='hidden' name='ds_id' value='"+ds_id+"'>";
-				pageForm.append(tag);
-				pageForm.attr("action", "${cpath}/search_detail");
-				pageForm.attr("method", "get");
-				pageForm.submit(); // 폼을 전송
-			});
+	function display(){
+		if($("#${vo.ds_id}").css("display")=="none"){
+			$("#${vo.ds_id}").css("display", "block")
+		}else{
+			$("#${vo.ds_id}").css("display", "none")
+		}
+	}
  </script>
 </body>
 </html>

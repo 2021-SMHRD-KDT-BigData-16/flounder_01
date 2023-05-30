@@ -63,7 +63,20 @@ public class BoardController {
 		
 		return "board/04_search";
 	}
+	
+	@RequestMapping("/search_detail")
+	public String search_detail(int ds_id, Model model, HttpSession session) {
+				
+		logger.info("BoardController search str_search {}", ds_id);
+		
+//		str_search = "바이러스";
+		String search_url = mapper.getDsDetail(ds_id);
+		model.addAttribute("search_url", search_url);
+		
+		return "board/09_search_detail";
+	}
 
+	
     // 파일전송 요청을 처리하기 위한 컨트롤러
     @RequestMapping("/upload")
     public String getFile(HttpServletRequest request, Model model,  MultipartFile file){
