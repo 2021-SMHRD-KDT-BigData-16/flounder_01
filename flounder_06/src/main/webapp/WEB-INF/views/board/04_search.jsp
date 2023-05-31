@@ -53,6 +53,7 @@ pageEncoding="UTF-8"%>
 				<div class="col-lg-2">
 					<jsp:include page="98_left.jsp" />
         </div>
+        
             <div class="col-lg-7">
                 <div class="card">
                     <!-- 질병검색 -->
@@ -110,8 +111,7 @@ pageEncoding="UTF-8"%>
 								</div>
 								</div>
               </div>
-            </div>
-          </div>
+          
        
               <!-- 질병검색 끝 -->
 				<div class="col-lg-3">
