@@ -47,18 +47,12 @@ pageEncoding="UTF-8"%>
             <!-- 질병검색 -->
 						<div class="card-body">
               
-              <form action="${cpath}/search" method="post" class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px ">
-                <input class="form-control mr-sm-2" type="search" name="str_search" placeholder="Search" aria-label="Search" >
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-              </form>
 							<h4 class="card-title">질병검색</h4>
               
 							<div class="input-group mb-3">
-<!--  								
-                <iframe src="${list_search[0].ds_url}" ></iframe>
- -->                
-                <iframe src="${search_url}" ></iframe>
-                
+ 
+                <iframe src="${search_url}" width="100%" height="500px"  ></iframe>
+
                 
                 
                 <!-- 							
