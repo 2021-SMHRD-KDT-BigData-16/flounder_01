@@ -79,13 +79,11 @@ pageEncoding="UTF-8"%>
                  <form action="${cpath}/dd_register" method="post" enctype="multipart/form-data">
                      <input type="hidden" name="dd_email" value="${mvo.m_email}"/>
                      <div class="form-group">
-                       <label>내용:</label>
-                       <textarea rows="3" name="dd_comment" id="content" class="form-control"></textarea>
-                     </div>
-                     <div class="form-group">
                        <label>업로드 이미지:</label>
                        <input type="file" name="file" id="file" accept="image/*" onchange="readImage(this);" />
-                       <img id = "preview_img" height = 200px/>
+                     </div>
+                     <div class="form-group">
+                       <img id = "preview_img" height = 400px/>
                      </div>
                    
                      <button type="submit" class="btn btn-sm btn-primary" style="width: 45%; font-size: 0.8em;">등록</button>
@@ -100,7 +98,7 @@ pageEncoding="UTF-8"%>
 		    <div class="col-lg-3" >
 			    <jsp:include page="97_right.jsp" />
         </div>
-          
+
       </div>  
         
     </div>  

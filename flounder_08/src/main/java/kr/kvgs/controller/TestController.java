@@ -113,9 +113,15 @@ public class TestController {
 
 	   @RequestMapping("/51")
 	   public String test51() {
-			logger.info(" TestController : {}.", "test99");
+			logger.info(" TestController : {}.", "test51");
 			
 			return "board/51_img_file_up";
 	   }
 
+	   @RequestMapping("/52")
+	   public String test52() {
+			logger.info(" TestController : {}.", "test52");
+			
+			return "board/52_FileUpload_drag";
+	   }
 }
