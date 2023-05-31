@@ -112,38 +112,3 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 
 
-'''
-<%@ page import="java.io.*, java.net.*" %>
-<%@ page import="org.apache.commons.io.IOUtils" %>
-<%@ page import="org.apache.http.HttpEntity" %>
-<%@ page import="org.apache.http.HttpResponse" %>
-<%@ page import="org.apache.http.client.methods.HttpPost" %>
-<%@ page import="org.apache.http.entity.ContentType" %>
-<%@ page import="org.apache.http.entity.mime.MultipartEntityBuilder" %>
-<%@ page import="org.apache.http.impl.client.CloseableHttpClient" %>
-<%@ page import="org.apache.http.impl.client.HttpClients" %>
-<%@ page import="org.apache.http.util.EntityUtils" %>
-<%
-File imageFile = new File("c:/upload/imgs/image.jpg");
-CloseableHttpClient httpClient = HttpClients.createDefault();
-//REST API 호출
-HttpPost uploadFile = new HttpPost("http://localhost:5000/process_image");
-MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-builder.addBinaryBody("image", new FileInputStream(imageFile), ContentType.APPLICATION_OCTET_STREAM, 
-imageFile.getName());
-HttpEntity multipart = builder.build();
-uploadFile.setEntity(multipart);
-HttpResponse exe_response = httpClient.execute(uploadFile);
-HttpEntity responseEntity = exe_response.getEntity();
-//JSON 파일 처리
-String result = EntityUtils.toString(responseEntity);
-%>
-Result: <%= result %>
-'''
-
-
-
-
-
-
-
