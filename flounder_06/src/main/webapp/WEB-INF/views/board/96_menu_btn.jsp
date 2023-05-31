@@ -26,7 +26,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000A2E;">
-  <a class="navbar-brand" href="#" onClick="location.href='./04'">04 info</a>
+  <a class="navbar-brand" href="#" onClick="location.href='./02'">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -47,13 +47,20 @@
    </ul>
    
   </div>
-  <form class="form-inline my-2 my-lg-0">
-  
-      <button class="btn btn-outline-light my-2 my-sm-0 mr-2" href="#" onMouseOver="showKoreanText(this, '로그인')" onMouseOut="showKoreanText(this, 'Login')"type="button" onClick="location.href='./login'">Login</button>
-      <button class="btn btn-outline-light my-2 my-sm-0" type="button" data-toggle="collapse" data-target="#menuCollapse" aria-controls="menuCollapse" aria-expanded="false">
+ <form class="form-inline my-2 my-lg-0">
+    <c:choose>
+        <c:when test="${!empty mvo}">
+            <button class="btn btn-outline-light my-2 my-sm-0 mr-2" onMouseOut="showKoreanText(this, '로그아웃')" type="button" onClick="location.href='${cpath}/logout'">Logout</button>
+        </c:when>
+        <c:otherwise>
+            <button class="btn btn-outline-light my-2 my-sm-0 mr-2" onMouseOver="showKoreanText(this, '로그인')" onMouseOut="showKoreanText(this, 'Login')" type="button" onClick="location.href='./login'">Login</button>
+        </c:otherwise>
+    </c:choose>
+    <button class="btn btn-outline-light my-2 my-sm-0" type="button" data-toggle="collapse" data-target="#menuCollapse" aria-controls="menuCollapse" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
-      </button>
-    </form>
+    </button>
+</form>
+
   </div>
 </nav>
 
