@@ -18,6 +18,27 @@ pageEncoding="UTF-8"%>
     src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+  <script>
+  
+    function readImage(input)
+    {
+    	if(input.files && input.files[0]) {
+    		var reader = new FileReader();
+    		reader.onload = function(e)
+    		{
+    			document.getElementById('preview_img').src = e.target.result;
+    		};
+    		reader.readAsDataURL(input.files[0]);
+    	} else {
+    		document.getElementById('preview_img').src = "";
+    	}
+    	
+    }
+  
+  </script>
+    
   </head>
   
   <body>
@@ -29,6 +50,7 @@ pageEncoding="UTF-8"%>
         <div class="col-lg-6">
           <div class="card">
           
+            <h4> image upload return json </h4> 
 	          <div class="row justify-content-center">
 	             <form action="http://121.179.7.40:5000/process_image" method="post" enctype="multipart/form-data">
 	                 <div class="form-group">
@@ -37,7 +59,9 @@ pageEncoding="UTF-8"%>
 	                 </div>
 	                 <div class="form-group">
 	                   <label>업로드 이미지:</label>
-	                   <input type="file" name="image" />
+                     <input type="file" name="image" id="file" accept="image/*" onchange="readImage(this);" />
+                       <img id = "preview_img" height = 200px/>
+	                   
 	                 </div>
 	                 <button type="submit" class="btn btn-sm btn-primary">플라스크 upload</button>
 	             </form>
@@ -46,10 +70,15 @@ pageEncoding="UTF-8"%>
           </div>
           
         </div>
-
+          
+      </div>
+      
+      <div class="row">
+      
         <div class="col-lg-6">
           <div class="card">
           
+            <h4> image upload return image </h4> 
 	          <div class="row justify-content-center">
 	             <form action="http://121.179.7.40:5000/return_image" method="post" enctype="multipart/form-data">
 	                 <div class="form-group">
@@ -68,8 +97,7 @@ pageEncoding="UTF-8"%>
           
         </div>
         
-          
-      </div>  
+      </div>
         
     </div>  
   </body>

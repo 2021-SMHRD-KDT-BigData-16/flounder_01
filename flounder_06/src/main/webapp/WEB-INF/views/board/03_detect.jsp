@@ -36,6 +36,27 @@ pageEncoding="UTF-8"%>
       white-space: nowrap;
     }
   </style>
+  
+  
+  <script>
+  
+    function readImage(input)
+    {
+    	if(input.files && input.files[0]) {
+    		var reader = new FileReader();
+    		reader.onload = function(e)
+    		{
+    			document.getElementById('preview_img').src = e.target.result;
+    		};
+    		reader.readAsDataURL(input.files[0]);
+    	} else {
+    		document.getElementById('preview_img').src = "";
+    	}
+    	
+    }
+  
+  </script>
+  
   </head>
   
   <body>
@@ -59,27 +80,23 @@ pageEncoding="UTF-8"%>
                      <input type="hidden" name="dd_email" value="${mvo.m_email}"/>
                      <div class="form-group">
                        <label>내용:</label>
-                       <textarea rows="10" name="dd_comment" id="content" class="form-control"></textarea>
+                       <textarea rows="3" name="dd_comment" id="content" class="form-control"></textarea>
                      </div>
                      <div class="form-group">
                        <label>업로드 이미지:</label>
-                       <input type="file" name="file" id="file" />
-                       
-                  <!-- <div class="form-group">
-							      <label>업로드 이미지:</label>
-							      <div class="custom-file">
-							        <input type="file" class="custom-file-input" id="file" name="file">
-							        <label class="custom-file-label" for="file">파일 선택</label>
-                     </div>--> 
-                   </div>
-                 
-                
+                       <input type="file" name="file" id="file" accept="image/*" onchange="readImage(this);" />
+                       <img id = "preview_img" height = 200px/>
+                     </div>
+                   
                      <button type="submit" class="btn btn-sm btn-primary" style="width: 45%; font-size: 0.8em;">등록</button>
                      <button type="reset" class="btn btn-sm btn-primary" style="width: 45%; font-size: 0.8em;">취소</button>
                  </form>
               </div>
             </div>
+            <a class="nav-link" href="#" onClick="location.href='./51'">파이썬 플라스크 연동 테스트</a>
           </div>
+          
+          
 		    <div class="col-lg-3" >
 			    <jsp:include page="97_right.jsp" />
         </div>

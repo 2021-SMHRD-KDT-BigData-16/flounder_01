@@ -44,6 +44,7 @@ pageEncoding="UTF-8"%>
 										<td> 작성일 </td>
 										<td> 작성자 </td>
 										<td> 원본 </td>
+										<td> 결과 </td>
                   </tr>
                 </thead>
 								
@@ -55,6 +56,7 @@ pageEncoding="UTF-8"%>
 											<td> <fmt:formatDate value= "${vo.dd_date}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
 											<td> ${vo.m_name} </td>
 											<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources/${vo.org_img}" ></p></td>
+											<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources/${vo.dt_img}" ></p></td>
                     </tr>
 								 		
                   </c:forEach>
