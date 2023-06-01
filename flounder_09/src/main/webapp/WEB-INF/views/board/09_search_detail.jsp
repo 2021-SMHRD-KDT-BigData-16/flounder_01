@@ -47,9 +47,9 @@ pageEncoding="UTF-8"%>
               
 							<h4 class="card-title">질병검색</h4>
               
-							<div class="input-group mb-3">
+							<div class="input-group mb-3" >
  
-                <iframe src="${search_url}" width="100%" height="500px"  ></iframe>
+                <iframe src="${search_url}" width="100%" height="800px"  ></iframe>
 
                 
                 

@@ -26,7 +26,7 @@
 	
 	<select id="getSearch" resultType = "kr.kvgs.entity.Dis_search"
 	                        parameterType="String">
-		select * from dis_search where ds_name like CONCAT('%', #{str_search}, '%')
+		select * from dis_search where ds_name like CONCAT('%', #{str_search}, '%') order by ds_name
 	</select>
 
 	<insert id="dd_insert" parameterType="kr.kvgs.entity.DetectDis">

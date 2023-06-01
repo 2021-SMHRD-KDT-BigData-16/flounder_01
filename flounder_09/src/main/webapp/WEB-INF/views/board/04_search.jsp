@@ -91,7 +91,7 @@ pageEncoding="UTF-8"%>
                         <!-- <td><a href="${vo.ds_url}">상세보기</a></td> -->
                         <form action="${cpath}/search_detail" method="post" class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px ">
                         	<input type="hidden" name="ds_id" value="${vo.ds_id}">
-                        	<td><button type="submit">상세보기</button></td>
+                        	<td><button type="submit"> 상세<br>보기</button></td>
                         </form>
                       </tr>
 		                 
