@@ -51,7 +51,7 @@ public class LoginController {
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate(); // 세션을 무효화
-		return "board/01_login";
+		return "board/02_info";
 	}
 
 }

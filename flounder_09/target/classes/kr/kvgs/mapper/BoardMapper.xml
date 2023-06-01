@@ -38,5 +38,12 @@
 	select ds_url from dis_search where ds_id = #{ds_id}
 	</select>
 	
+	<select id="getShareDetail" resultType="kr.kvgs.entity.ShareDetail" parameterType="int">
+	select c.c_id c_id, c.title title, c.c_date c_date, m.m_name m_name, 
+						c.img_path img_path, c.c_text c_text, c.w_email w_email  
+				from community c, member m
+		where c.w_email = m.m_email and c.c_id = #{c_id}
+	</select>
+	
 
 </mapper>

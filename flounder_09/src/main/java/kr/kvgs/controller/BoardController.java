@@ -19,6 +19,7 @@ import kr.kvgs.entity.Community;
 import kr.kvgs.entity.DetectDis;
 import kr.kvgs.entity.Dis_search;
 import kr.kvgs.entity.Member;
+import kr.kvgs.entity.ShareDetail;
 import kr.kvgs.mapper.BoardMapper;
 
 
@@ -69,12 +70,25 @@ public class BoardController {
 				
 		logger.info("BoardController search str_search {}", ds_id);
 		
-//		str_search = "바이러스";
 		String search_url = mapper.getDsDetail(ds_id);
 		model.addAttribute("search_url", search_url);
 		
 		return "board/09_search_detail";
 	}
+	
+	@RequestMapping("/share_detail")
+	public String share_detail(int c_id, Model model, HttpSession session) {
+				
+		logger.info("***** BoardController shareDetail *****{}", c_id);
+		
+		ShareDetail share_detail = mapper.getShareDetail(c_id);
+		logger.info("***** BoardController return *****{}", c_id);
+		
+		model.addAttribute("share_detail", share_detail);
+		
+		return "board/06_share_detail";
+	}
+	
 
     // 파일전송 요청을 처리하기 위한 컨트롤러
     @RequestMapping("/dd_register")	

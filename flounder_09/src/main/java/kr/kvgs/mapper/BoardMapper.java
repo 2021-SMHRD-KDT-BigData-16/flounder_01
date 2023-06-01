@@ -8,6 +8,7 @@ import kr.kvgs.entity.Community;
 import kr.kvgs.entity.DetectDis;
 import kr.kvgs.entity.Dis_search;
 import kr.kvgs.entity.Member;
+import kr.kvgs.entity.ShareDetail;
 
 public interface BoardMapper {
 	// 회원 로그인 처리 메서드 정의
@@ -20,5 +21,7 @@ public interface BoardMapper {
 	public String getDsDetail(int ds_id);
 
 	public int dd_insert(DetectDis vo);
+	
+	public ShareDetail getShareDetail(int c_id);
 	
 }
