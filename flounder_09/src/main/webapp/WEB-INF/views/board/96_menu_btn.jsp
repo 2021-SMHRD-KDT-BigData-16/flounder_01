@@ -11,13 +11,14 @@
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #000A2E; /* Set background color to #000A2E */
+    background-color: #5AD5C8; /* Set background color to #000A2E */
     color: white;
     padding: 5px;
     border-radius: 3px;
     font-size: 12px;
     opacity: 0;
     transition: opacity 0.3s;
+    
   }
 
 
@@ -25,7 +26,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000A2E;">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5AD5C8;">
   <a class="navbar-brand" href="#" onClick="location.href='./02'">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

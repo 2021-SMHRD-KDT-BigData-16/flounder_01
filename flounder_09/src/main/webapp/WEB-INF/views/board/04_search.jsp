@@ -25,7 +25,7 @@ pageEncoding="UTF-8"%>
     <!-- 여기까지 -->
      <style>
     .search-button {
-        background-color: #000A2E; 
+        background-color: #5AD5C8; 
         color: white;
         padding: 6px;
         width: 80px;
@@ -39,6 +39,7 @@ pageEncoding="UTF-8"%>
      .table-bordered td {
         text-align: center;
     }
+
         
     </style>
 </head>

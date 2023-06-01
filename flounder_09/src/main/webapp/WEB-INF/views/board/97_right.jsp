@@ -4,7 +4,8 @@
     <style>
     	.card{
 		min-height: 400px;
-	 	max-height: 1600px
+	 	max-height: 1600px;
+	 	border: 1px solid #5AD5C8;
 		}
     </style>
 	<div class="card" >

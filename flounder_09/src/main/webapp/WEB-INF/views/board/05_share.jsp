@@ -1,5 +1,4 @@
-
-</html><%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -19,79 +18,45 @@ pageEncoding="UTF-8"%>
     src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-   <!--  
-		<script type="text/javascript">
-		$(document).ready(()=>{
-			var pageForm = $("#pageForm");
-			// 상세보기로 이동
-			$(".move").on("click", function(e){ 
-				e.preventDefault(); // a tag의 고유한 기능을 막는 방법
-				var num = $(this).attr("href");
-				var tag = "<input type='hidden' name='c_id' value='"+c_id+"'>";
-				pageForm.append(tag);
-				pageForm.attr("action", "${cpath}/share_detail");
-				pageForm.attr("method", "get");
-				pageForm.submit(); // 폼을 전송
-			});
-		</script>
-		-->
+    <style>
+        .feed-box {
+            border: 1px solid #5AD5C8;
+        }
+    </style>
   </head>
   <body>
-    
     <jsp:include page="96_menu_btn.jsp" />
-    
-    
-		<div class="card-body">
-			<div class="row">
-			
-				<div class="col-lg-9">
-					<div class="card">
-            
-						<div class="card-body">
-              
-							<h4 class="card-title">커뮤니티 게시판</h4>
-							<table class="table table-bordered table-hover">
-								<thead>
-									<tr>
-										<td> 제목 </td>
-										<td> 작성일 </td>
-										<td> 작성자 </td>
-										<td> 사진 </td>
-                  </tr>
-                </thead>
-								
-								<tbody>
-									<c:forEach var="vo" items="${list_comm}">
-                    
-											<tr>
-												<!--   <td> <a class="move" href="${vo.c_id}">${vo.title}</a> </td> -->
-												<form action="${cpath}/share_detail" method="post" class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px ">
-													<td>
-													 <button type="submit">${vo.title}</button>
-													 <input type="hidden" name="c_id" value="${vo.c_id}">
-													 </td>
-												</form>
-												<td> <fmt:formatDate value= "${vo.c_date}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
-												<td> ${vo.m_name} </td>
-												<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources${vo.img_path}" ></p></td>
-	                    </tr>
-								 		
-								 		
-                  </c:forEach>
-                  
-                </tbody>								
-              </table>
-							
-							
+    <div class="card-body">
+    <div style="min-height: 200px;"> 
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="feed-box">
+                    <div style="padding: 20px;" class="d-flex flex-column align-items-center"> 
+                        <c:forEach var="vo" items="${list_comm}">
+                            <div class="col-5 mb-4">
+                                <div class="card" style="padding: 20px;">
+                                    <div class="card-img-container"
+                                        style="width: 490px; height: 300px; overflow: hidden;">
+                                        <img src="${cpath}/resources${vo.img_path}"
+                                            class="card-img-top" alt="이미지"
+                                            style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <h5 class="card-text">작성자: ${vo.m_name}</h5>
+                                    <p class="card-title">${vo.title}</p>
+                                    <p class="card-text">
+                                        <small class="text-muted"><fmt:formatDate
+                                                value="${vo.c_date}" pattern="yyyy-MM-dd HH:mm:ss" /></small>
+                                    </p>
+                                </div>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="col-lg-3">
+                <jsp:include page="97_right.jsp" />
+            </div>
         </div>
-        
-				<div class="col-lg-3">
-	  			<jsp:include page="97_right.jsp" />
-        </div>
-        
-      </div>
-		
+    </div>
   </body>
 </html>
