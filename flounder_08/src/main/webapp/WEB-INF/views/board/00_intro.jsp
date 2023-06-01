@@ -20,7 +20,7 @@
   </head>
   <style>
     body {
-    background-image: url("./resources/images/intro2.gif");
+    background-image: url("./resources/images/intro02.gif");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
