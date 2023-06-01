@@ -18,45 +18,46 @@
     <title>웹페이지</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   </head>
-  <style>
+   <style>
     body {
-    background-image: url("./resources/images/intro02.gif");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+      background-image: url("./resources/images/sea03.gif");
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
     
     .start-button {
-    background-color: #65FFF0;
-    border: none;
-    color: #fff;
-    font-size: 26px;
-    padding: 10px 80px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    margin-top: 460px; /* 추가 */
+      color: white;
+      font-weight: bold;
+     
+      font-size: 26px;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      background-color: #5AD5C8;
+      border: 2px solid white; /* 테두리 추가 */
+      border-radius: 5px; /* 테두리를 각지게 만들기 */
+      border-width: 3px; /* 테두리 선 굵기 조정 */
     }
     
     .start-button:hover {
-    background-color: #5AD5C8;
-    cursor: pointer;
+      
+      background-color: transparent; /* 배경 없애기 */
     }
   </style>
 </head>
 
 <body>
-  
-  <button class="start-button" onClick="location.href='./04'">Start</button>
-  
-  
+  <button class="start-button" onClick="location.href='./04'">Welcom</button>
 </body>
 
-
-
-
-
 </html>
+
+
+
+
+
