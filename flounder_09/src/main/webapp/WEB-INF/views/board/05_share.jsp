@@ -76,6 +76,7 @@ pageEncoding="UTF-8"%>
 												<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources${vo.img_path}" ></p></td>
 	                    </tr>
 								 		
+								 		
                   </c:forEach>
                   
                 </tbody>								
