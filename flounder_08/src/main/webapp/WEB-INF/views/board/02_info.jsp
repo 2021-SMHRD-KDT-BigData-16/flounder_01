@@ -24,17 +24,15 @@
 
 <div class="card-body">
 			<div class="row">
-				<div class="col-lg-2">
-					<jsp:include page="98_left.jsp" />
-				</div>
-				<div class="col-lg-7">
+				
+				<div class="col-lg-9">
 					<div class="card">
 						<div class="card-header">
 					
 						</div>
 
 						<div class="card-body">
-							<h4 class="card-title">BOARD</h4>
+							<h4 class="card-title">서비스 안내</h4>
 							<p class="card-text">제목</p>
 							게시판 콘텐츠가 들어가는 부분
 						</div>

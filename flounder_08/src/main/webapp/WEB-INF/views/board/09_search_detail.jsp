@@ -38,10 +38,8 @@ pageEncoding="UTF-8"%>
     
 		<div class="card-body">
 			<div class="row">
-				<div class="col-lg-2">
-					<jsp:include page="98_left.jsp" />
-        </div>
-				<div class="col-lg-7">
+			
+				<div class="col-lg-9">
 					<div class="card">
             
             <!-- 질병검색 -->

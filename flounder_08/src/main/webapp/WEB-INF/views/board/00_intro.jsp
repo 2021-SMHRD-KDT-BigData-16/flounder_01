@@ -50,7 +50,7 @@
 
 <body>
   
-  <button class="start-button" onClick="location.href='./login'">Start</button>
+  <button class="start-button" onClick="location.href='./04'">Start</button>
   
   
 </body>

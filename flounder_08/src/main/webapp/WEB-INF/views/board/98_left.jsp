@@ -27,7 +27,7 @@
       <div>
         
         <c:if test="${!empty mvo}">
-          <h4 class="card-title">${mvo.m_name}</h4>
+          <p class="card-title">${mvo.m_name}</p>
           <p class="card-text">회원님, 환영합니다.</p>
           <form action="${cpath}/logout" method="post">
             <button class="btn btn-primary">로그아웃</button>

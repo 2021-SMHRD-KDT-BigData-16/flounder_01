@@ -8,73 +8,177 @@ pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title> 07 history </title>
+<head>
+    <title>07 history</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
-  <body>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var loading = false;
+            var page = 1;
+            var container = $('#contentContainer');
+
+            // 더 많은 콘텐츠를 로드하는 함수
+            function loadMoreContent() {
+                if (loading) {
+                    return;
+                }
+
+                loading = true;
+
+                // 서버에서 더 많은 데이터를 가져오기 위한 AJAX 요청 수행
+                $.ajax({
+                    url: 'path/to/endpoint', // 실제 엔드포인트 URL로 대체해야 합니다.
+                    type: 'GET',
+                    data: {page: page},
+                    success: function (response) {
+                        // 새로운 데이터로 콘텐츠 컨테이너 업데이트
+                        container.append(response);
+                        loading = false;
+                        page++;
+                    },
+                    error: function () {
+                        loading = false;
+                    }
+                });
+            }
+
+            // 스크롤 이벤트 처리를 위한 이벤트 핸들러
+            $(window).scroll(function () {
+                if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+                    loadMoreContent();
+                }
+            });
+
+            // 초기 로드
+            loadMoreContent();
+        });
+    </script>
+ <style>
+    .card2 {
+        margin-bottom: 20px;
+        border-radius: 5px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        background-color: #f1f1f1;
+        padding: 10px;
+    }
+
+    .card2 .content .title {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .card2 .content .name {
+        font-size: 14px;
+    }
+
+    .card2 img {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    table.table-bordered {
+        border: none;
+    }
+
+    table.table-bordered th,
+    table.table-bordered td {
+        border: none;
+    }
+
+    table.table-bordered tbody tr {
+        background-color: transparent;
+    }
+
+    .chat-bubble {
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .chat-content {
+        color: #333333;
+    }
+
+    .chat-content .title {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .chat-content .date {
+        font-size: 12px;
+        color: #999999;
+    }
     
-    <jsp:include page="96_menu_btn.jsp" />
-    
-    
-    
-		<div class="card-body">
-			<div class="row">
-				<div class="col-lg-2">
-					<jsp:include page="98_left.jsp" />
-        </div>
-				<div class="col-lg-7">
-					<div class="card">
-						
-						<div class="card-body">
-							<h4 class="card-title">히스토리 게시판</h4>
-							<table class="table table-bordered table-hover">
-								<thead>
-									<tr>
-										<td> 제목 </td>
-										<td> 작성일 </td>
-										<td> 작성자 </td>
-										<td> 원본 </td>
-										<td> 결과 </td>
-                  </tr>
-                </thead>
-								
-								<tbody>
-									<c:forEach var="vo" items="${list_detect}">
-                    
-										<tr>
-											<td> ${vo.dd_comment} </td>
-											<td> <fmt:formatDate value= "${vo.dd_date}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
-											<td> ${vo.m_name} </td>
-											<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources/${vo.org_img}" ></p></td>
-											<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources/${vo.dt_img}" ></p></td>
-                    </tr>
-								 		
-                  </c:forEach>
-                  
-                </tbody>								
-              </table>
-							
-							
+    .chat-content .name {
+        font-size: 12px;
+        color: #000000;
+        font-weight: bold;
+    }
+
+    .chat-window {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+</style>
+
+</head>
+<body>
+<jsp:include page="96_menu_btn.jsp" />
+
+<div id="contentContainer">
+    <div class="card2-body">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="card2">
+                    <div class="card2-body">
+                        <h4 class="card2-title text-center">히스토리 게시판</h4>
+                        <table class="table table-bordered table-hover">
+    <tbody>
+   <c:forEach var="vo" items="${list_detect}">
+    <tr>
+        <td>
+            <div class="card2">
+                <div class="row">
+                    <div class="col-md-6 img-box-left">
+                        <img alt="이미지" src="${cpath}/resources/${vo.org_img}">
+                    </div>
+                    <div class="col-md-6 text-box-right chat-bubble">
+                        <div class="chat-content">
+                            <div class="title">${vo.dd_comment}</div>
+                            <div class="date"><fmt:formatDate value="${vo.dd_date}" pattern="yyyy-MM-dd HH:mm:ss"/></div>
+                            <div class="name">${vo.m_name}</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </td>
+    </tr>
+</c:forEach>
+
+    </tbody>
+</table>
+                 </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <jsp:include page="97_right.jsp" />
+            </div>
         </div>
-				<div class="col-lg-3">
-					<jsp:include page="97_right.jsp" />
-        </div>
-      </div>
     </div>
-		<div class="card-footer">권벤저스</div>
-  </div>
-  
+</div>
+
 </body>
 </html>
