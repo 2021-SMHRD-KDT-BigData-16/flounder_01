@@ -1,3 +1,5 @@
+#!git clone https://github.com/ultralytics/yolov5
+
 import torch
 import sys
 import os
@@ -8,10 +10,15 @@ sys.version
 
 %pwd
 
-%cd YOLOv6_Test
-
-!git clone https://github.com/meituan/YOLOv6
-
-%cd YOLOv6
+%cd yolov5/yolov5-master
 
 %pwd
+
+
+# !git clone https://github.com/ultralytics/yolov5  # clone
+# %cd yolov5
+#%pip install -qr requirements.txt
+
+import torch
+import utils
+display = utils.notebook_init()  # checks

@@ -1,3 +1,5 @@
+!pip install flask
+
 from flask import Flask, request
 from PIL import Image
 import io

@@ -1,0 +1,82 @@
+1. 아나콘다 삭제
+2. CUDA 삭제
+3. CuDnn 삭제
+
+4. 관련 폴더 확인하고 모두 삭제하기.
+
+5. 아나콘다 설치
+8. YOLOv5 재 실행.
+
+NVIDIA 그래픽 드라이버 다운로드
+https://www.nvidia.co.kr/content/DriverDownloads/confirmation.php?url=/Windows/535.98/535.98-desktop-win10-win11-64bit-international-dch-whql.exe&lang=kr&type=TITAN
+
+7. CnDNN 설치
+https://developer.nvidia.com/rdp/cudnn-download
+
+6. CUDA 설치
+https://developer.nvidia.com/cuda-11-7-0-download-archive
+
+1. CUDA, CuDnn 삭제
+https://uding.tistory.com/30
+
+NVIDIA GeForce RTX 2070
+
+
+1. 제어판에서 NVIDIA 모두 삭제
+
+2. 재부팅
+
+3. program files 에서 NVIDIA 삭제하기
+
+4. program files (x86) 에서 NVIDIA 삭제하기
+
+5. 아나콘다 삭제
+
+6. smhrd 폴더에서 아나콘다 폴더 모두 삭제
+
+7. 재부팅
+
+8. NVidia 그래픽 드라이버 설치
+
+9. 재부팅
+
+10. CUDA 설치
+
+11. cmd 에서 nvidia-smi 로 cuda 버전 확인하기.
+
+| NVIDIA-SMI 535.98                 Driver Version: 535.98       CUDA Version: 12.2
+
+12. CUDA 설치
+
+13. CuDNN 설치 (폴더 덮어쓰기)
+
+14. 재부팅
+
+15. anaconda 설치
+
+16. pytorch 설치 페이지로 이동.
+
+https://pytorch.org/get-started/locally/
+
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+17. pytorch에서  GPU 사용 여부 확인.
+-	import torch
+-	torch.cuda.is_available()
+
+18. conda version update
+
+conda update -n base -c defaults conda
+
+18. 아나콘다 가상환경 만들기
+conda create -n yolov5 python = 3.11.3
+
+
+conda activate yolov5
+
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+
+python -m ipykernel install --user --name yolov5 --display-name yolov5
+
+

@@ -19,7 +19,25 @@ pageEncoding="UTF-8"%>
     src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+  <script type="text/javascript">
+  
+  	$(document).ready(function(){
+  		
+   		var pageForm=$("#pageForm");
+   	  $(".move").on("click", function(e){
+   		  alert("왜 요기로 안오지???")
+   	 		e.preventDefault(); // a tag의 고유한 기능을 막는 방법
+   	  });
+   	  
+ 	  });
+ </script>
+
+    
+    
   </head>
+  
+  
   <body>
     
     <jsp:include page="96_menu_btn.jsp" />
@@ -48,7 +66,7 @@ pageEncoding="UTF-8"%>
 									<c:forEach var="vo" items="${list_comm}">
                     
 										<tr>
-											<td> ${vo.title} </td>
+											<td> <a class=move> ${vo.title} </a> </td>
 											<td> <fmt:formatDate value= "${vo.c_date}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>
 											<td> ${vo.m_name} </td>
 											<td> <p> <img alt="이미지" height = 100px src="${cpath}/resources${vo.img_path}" ></p></td>
@@ -59,6 +77,12 @@ pageEncoding="UTF-8"%>
                 </tbody>								
               </table>
 							
+                   <form id="pageForm" action="${cpath}/list" method="post">
+                      <input type="hidden" id="page" name="page" />
+                     
+                      <input type="hidden" id="type" name="type" />
+                      <input type="hidden" id="keyword" name="keyword" />
+                   </form>
 							
             </div>
           </div>
