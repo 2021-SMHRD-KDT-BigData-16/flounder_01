@@ -82,10 +82,11 @@ public class BoardController {
 				
 		logger.info("***** BoardController shareDetail *****{}", c_id);
 		
-		ShareDetail share_detail = mapper.getShareDetail(c_id);
-		logger.info("***** BoardController return *****{}", c_id);
+		ShareDetail sd_one = mapper.getShareDetail(c_id);
+		logger.info("***** BoardController return ***** {}, {}", 
+				sd_one.getTitle() , sd_one.getC_id());
 		
-		model.addAttribute("share_detail", share_detail);
+		model.addAttribute("share_detail", sd_one);
 		
 		return "board/06_share_detail";
 	}
