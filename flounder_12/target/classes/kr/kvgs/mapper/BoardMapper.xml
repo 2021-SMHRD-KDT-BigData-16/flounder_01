@@ -19,10 +19,21 @@
     select d.dd_id dd_id, d.org_img org_img, d.dt_img dt_img, d.dd_email dd_email, 
             d.dd_date dd_date, d.dd_comment dd_comment, m.m_name m_name
         from detect_dis d, member m
-		where d.dd_email = m.m_email
+		where d.dd_email = m.m_email and d.dd_email = #{m_email}
 				order by d.dd_date desc
     		
 	</select>
+	
+		<select id="getHistoryDetail" resultType = "kr.kvgs.entity.HistoryDetail"
+	                        parameterType="int">
+    select d.dd_id dd_id, d.org_img org_img, d.dt_img dt_img, d.dd_email dd_email, 
+            d.dd_date dd_date, d.dd_comment dd_comment, m.m_name m_name
+        from detect_dis d, member m
+		where d.dd_email = m.m_email and d.dd_id = #{dd_id}
+    		
+	</select>
+	
+	
 	
 	<select id="getSearch" resultType = "kr.kvgs.entity.Dis_search"
 	                        parameterType="String">

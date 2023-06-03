@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import kr.kvgs.entity.Community;
 import kr.kvgs.entity.DetectDis;
 import kr.kvgs.entity.Dis_search;
+import kr.kvgs.entity.HistoryDetail;
 import kr.kvgs.entity.Member;
 import kr.kvgs.entity.ShareDetail;
 import kr.kvgs.mapper.BoardMapper;
@@ -52,6 +53,18 @@ public class BoardController {
 		
 		return "board/07_history";
 	}
+	
+	@RequestMapping("/history_detail")
+	public String history_detail(int dd_id, Model model, HttpSession session) {
+				
+		logger.info("BoardController historyDetail str_search {}", dd_id);
+		
+		HistoryDetail history_detail = mapper.getHistoryDetail(dd_id);
+		model.addAttribute("history_detail", history_detail);
+		
+		return "board/08_history_detail";
+	}
+	
 	
 	@RequestMapping("/search")
 	public String search(String str_search, Model model, HttpSession session) {

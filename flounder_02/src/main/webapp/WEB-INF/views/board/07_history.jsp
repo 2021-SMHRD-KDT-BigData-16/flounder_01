@@ -32,6 +32,8 @@
 				<div class="col-lg-2">
 					<jsp:include page="98_left.jsp" />
 				</div>
+				
+				<!--  
 				<div class="col-lg-7">
 					<div class="card">
 						
@@ -65,7 +67,43 @@
 							
 						</div>
 					</div>
-				</div>
+				</div> -->
+				
+				<div class="col-lg-7">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">히스토리 게시판</h4>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr style="background-color: #000A2; color: white;">
+              <th>제목</th>
+              <th>작성일</th>
+              <th>작성자</th>
+              <th>원본</th>
+            </tr>
+          </thead>
+          <tbody>
+            <c:forEach var="vo" items="${list_detect}">
+              <tr>
+                <td>${vo.dd_comment}</td>
+                <td><fmt:formatDate value="${vo.dd_date}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                <td>${vo.m_name}</td>
+                <td>
+                  <p><img alt="이미지" height="100" src="${cpath}/resources${vo.org_img}"></p>
+                </td>
+              </tr>
+            </c:forEach>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+				
+				
+				
+				
 				<div class="col-lg-3">
 					<jsp:include page="97_right.jsp" />
 				</div>

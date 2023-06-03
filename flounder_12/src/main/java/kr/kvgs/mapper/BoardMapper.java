@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Select;
 import kr.kvgs.entity.Community;
 import kr.kvgs.entity.DetectDis;
 import kr.kvgs.entity.Dis_search;
+import kr.kvgs.entity.HistoryDetail;
 import kr.kvgs.entity.Member;
 import kr.kvgs.entity.ShareDetail;
 
@@ -23,5 +24,8 @@ public interface BoardMapper {
 	public int dd_insert(DetectDis vo);
 	
 	public ShareDetail getShareDetail(int c_id);
+	
+	public HistoryDetail getHistoryDetail(int dd_id);
+	
 	
 }

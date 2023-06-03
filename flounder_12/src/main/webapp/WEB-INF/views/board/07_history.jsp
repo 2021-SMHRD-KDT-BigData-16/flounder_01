@@ -16,6 +16,24 @@ pageEncoding="UTF-8"%>
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css">
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        
+    <script type="text/javascript">
+		$(document).ready(()=>{
+			var pageForm = $("#pageForm");
+			// 상세보기로 이동
+			$(".move").on("click", function(e){ 
+				e.preventDefault(); // a tag의 고유한 기능을 막는 방법
+				var dd_id = $(this).attr("href");
+				var tag = "<input type='hidden' name='dd_id' value='"+dd_id+"'>";
+				pageForm.append(tag);
+				pageForm.attr("action", "${cpath}/history_detail");
+				pageForm.attr("method", "post");
+				pageForm.submit(); // 폼을 전송
+			 });
+			});
+		</script>
+        
+        
     <script>
         $(document).ready(function () {
             var loading = false;
@@ -153,11 +171,15 @@ pageEncoding="UTF-8"%>
             <div class="card2">
                 <div class="row">
                     <div class="col-md-6 img-box-left">
-                        <img alt="이미지" src="${cpath}/resources/${vo.org_img}">
+                        <a class="move" href="${vo.dd_id}"> 
+                        <img alt="이미지"	src="${cpath}/resources/${vo.org_img}">
+												</a>
                     </div>
                     <div class="col-md-6 text-box-right chat-bubble">
                         <div class="chat-content">
-                            <div class="title">${vo.dd_comment}</div>
+                            <!--   <div class="title">${vo.dd_comment}</div> -->
+                            <a class = 'move' href = "${vo.dd_id}">${vo.dd_comment}</a>
+                            
                             <div class="date"><fmt:formatDate value="${vo.dd_date}" pattern="yyyy-MM-dd HH:mm:ss"/></div>
                             <div class="name">${vo.m_name}</div>
                         </div>
@@ -170,6 +192,10 @@ pageEncoding="UTF-8"%>
 
     </tbody>
 </table>
+		<form id="pageForm" >
+
+							</form>
+
                  </div>
                 </div>
             </div>
@@ -179,6 +205,6 @@ pageEncoding="UTF-8"%>
         </div>
     </div>
 </div>
-
+					
 </body>
 </html>

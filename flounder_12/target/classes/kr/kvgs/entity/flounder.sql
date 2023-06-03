@@ -250,6 +250,11 @@ insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) v
 insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (2004, 'mks@kvgs.com', '2023/03/28 09:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R04_B01_I00000021.JPG',   '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R04_B01_I00000021_bbox.JPG', '움직이지 않아서 찍어 봅니다.');
 insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (2005, 'mks@kvgs.com', '2023/03/29 08:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021.JPG',   '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021_bbox.JPG', '배까고 누웠어요');
 
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (2006, 'shs@kvgs.com', '2023/03/29 08:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021.JPG',   '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021_bbox.JPG', '힘없어보이는 넙치 검사');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (2007, 'shs@kvgs.com', '2023/03/29 08:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021.JPG',   '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021_bbox.JPG', '문제있어보이는 광어');
+insert into detect_dis (dd_id, dd_email, dd_date, org_img, dt_img, dd_comment) values (2008, 'shs@kvgs.com', '2023/03/29 08:34:00', '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021.JPG',   '/DATA/DetectImg/F01_U01_O0001_D2022-07-11_L330_W0483_S2_R05_B01_I00000021_bbox.JPG', '요즘 움직임이 굼뜬 한마리');
+
+
 commit;
 
 select d.dd_id dd_id, d.org_img org_img, d.dt_img dt_img, d.dd_email dd_email, 
