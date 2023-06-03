@@ -21,37 +21,37 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script type="text/javascript">
-	$(document).ready(function() {
+$(document).ready(function() {
 		// 4개의 버튼을 클릭하면 처리하는 부분
 		$("button").on("click", function(e) {
 			var btn = $(this).data("btn"); // data() = data-에 있는 이름
 			var formData = $("#frm");
 			if (btn == "list") {
 				//location.href="${cpath}/list";
-				formData.find("#num").remove();
 				formData.attr("action", "${cpath}/community");
-				formData.attr("method", "post");
+				formData.attr("method", "get");
+				// formData.find("#c_id").remove();
 			} else if (btn == "modify") {
 				formData.attr("action", "${cpath}/modify"); // ?num=${vo.num}
-				formData.attr("method", "post");
+				formData.attr("method", "get");
 			} else if (btn == "remove") {
 				//location.href="${cpath}/remove?num="+${vo.num};
 				formData.attr("action", "${cpath}/remove"); // ?num=${vo.num}
-				formData.attr("method", "post");
+				formData.attr("method", "get");
 			} else if (btn == "reply") {
 				formData.attr("action", "${cpath}/reply"); // ?num=${vo.num}
-				formData.attr("method", "post");
+				formData.attr("method", "get");
 			}
 			formData.submit(); // 전송
+		})
 		});
-	});
 </script>
 
 
 </head>
 <body>
-
-	<jsp:include page="96_menu_btn.jsp" />
+    
+<jsp:include page="96_menu_btn.jsp" />
 
 
 
@@ -96,7 +96,10 @@
 								<!-- 로그인한 아이디와 게시물의 아이디가 같을경우 --> 
 								<c:if test="${mvo.m_email eq share_detail.w_email}">
 									<button data-btn="modify" class="btn btn-sm btn-primary">수정</button>
-									<button data-btn="remove" class="btn btn-sm btn-primary">삭제</button>
+									<button data-btn="remove" class="btn btn-sm btn-primary">
+										<input type="hidden" value="${share_detail.c_id}">
+										삭제
+									</button>
 								</c:if> 
 								<c:if test="${!empty mvo}">
 									<button data-btn="reply" class="btn btn-sm btn-primary">답글</button>
@@ -104,7 +107,7 @@
 						</table>
 
 						<form id="frm">
-
+							<input type="hidden" id="c_id" name="c_id" value="${share_detail.c_id}">
 						</form>
 						<!--  
 							<h4 class="card-title">BOARD</h4>
@@ -122,6 +125,7 @@
 	</div>
 	<div class="card-footer">권벤저스</div>
 	</div>
+		
 
 </body>
 </html>

@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class Community {
-	private String 	c_id;
+	private int c_id;
 	private String 	title;
 	private Date 	c_date;
 	private String 	m_name;

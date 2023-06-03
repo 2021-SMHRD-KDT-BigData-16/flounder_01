@@ -14,6 +14,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 import kr.kvgs.entity.Community;
 import kr.kvgs.entity.DetectDis;
@@ -102,6 +104,12 @@ public class BoardController {
 		model.addAttribute("history_detail", history_detail);
 		
 		return "board/08_history_detail";
+	}
+	
+	@RequestMapping("/remove")
+	public String remove(int c_id) { // ?num=n
+		mapper.remove(c_id);
+		return "redirect:/community"; //
 	}
 
     // 파일전송 요청을 처리하기 위한 컨트롤러

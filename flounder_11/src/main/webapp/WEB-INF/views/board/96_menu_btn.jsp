@@ -54,7 +54,7 @@
  <form class="form-inline my-2 my-lg-0">
     <c:choose>
         <c:when test="${!empty mvo}">
-            <button class="btn btn-outline-light my-2 my-sm-0 mr-2" onMouseOut="showKoreanText(this, '로그아웃')" type="button" onClick="location.href='${cpath}/logout'">Logout</button>
+            <button class="btn btn-outline-light my-2 my-sm-0 mr-2" onMouseOver="showKoreanText(this, '로그아웃')" onMouseOut="showKoreanText(this, 'Logout')" type="button" onClick="location.href='${cpath}/logout'">Logout</button>
         </c:when>
         <c:otherwise>
             <button class="btn btn-outline-light my-2 my-sm-0 mr-2" onMouseOver="showKoreanText(this, '로그인')" onMouseOut="showKoreanText(this, 'Login')" type="button" onClick="location.href='${cpath}/login'">Login</button>
@@ -65,9 +65,8 @@
     </button>
 </form>
 
-  </div>
-</nav>
 
+</nav>
 
 <script>
   function showKoreanText(element, text) {
@@ -80,5 +79,4 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </form>
-  </div>
-</nav>
+

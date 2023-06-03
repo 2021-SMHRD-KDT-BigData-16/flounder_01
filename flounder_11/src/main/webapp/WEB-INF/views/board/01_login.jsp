@@ -119,7 +119,7 @@ pageEncoding="UTF-8"%>
                 <label for="password">비밀번호:</label>
                 <input type="password" name="m_pw" class="form-control" id="password">
               </div>
-              <button class="btn btn-primary">로그인</button>
+              <button type="submit" class="btn btn-primary">로그인</button>
               <button class="btn btn-primary">회원가입</button>
             </form>
           </c:if>

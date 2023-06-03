@@ -160,7 +160,7 @@ pageEncoding="UTF-8"%>
                   <button class="btn btn-primary">LOGIN</button>
                    <div style="margin-bottom: 10px;"></div> 
               <div class="d-flex justify-content-between" style="margin-bottom: 10px; font-size: 20px;"> <!-- 변경된 부분 -->
-                <a href="#" style="color: #fff;">Sign Up</a>
+                <a href="#" style="color: #fff;">Join Us</a>
                   <a href="#" style="color: #fff; margin-left: 150px;">Forget Password</a>
                 </div>
               </div>

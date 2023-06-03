@@ -26,5 +26,7 @@ public interface BoardMapper {
 	public ShareDetail getShareDetail(int c_id);
 	
 	public HistoryDetail getHistoryDetail(int dd_id);
+
+	public void remove(int c_id);
 	
 }

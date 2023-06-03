@@ -268,7 +268,12 @@ insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('비브리
 insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('상피증생증', '자어기에 나타나며, 지느러미 및 체표가 흐릿하게 변하고, 특히 지느러미 끝 부분이 말려들어 가는 듯한 증상', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IV002&fshCd=611301', '바이러스성질병');
 insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('스쿠티카병', '표피가 박리되고 근육층이 노출되는 궤양증, 체표 염증, 지느러미 연조 및 꼬리자루 노출, 두부손상', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IP007&fshCd=611301', '기생충성질병');
 insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('에드워드병', '수류를 따라 빙빙 도는 행동, 체색 흑화, 지느러미 및 복부 발적 및 충혈, 복부팽만, 탈장', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IB004&fshCd=611301', '세균성질병');			
-				
+insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('연쇄구균증', '체색 흑화, 안구 돌출·백탁·충혈, 두부 및 상하턱의 발적, 아가미 뚜껑 및 아가미 뚜껑 내측의 발적 그리고 아가미와 체표에 점액이 많이 분비', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IB001&fshCd=611301', '세균성질병');
+insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('이리도바이러스병', '치어단계에서 발생하며 체색이 검어지고, 복수가 차며, 내부장기의 출혈로 빈혈이 발생, 치어단계를 벗어나면 대량폐사는 발생하지 않음', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IV004&fshCd=611301', '바이러스성질병');
+insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('장관백탁증', '치어가 체색이 검어지고 장관이 백탁되거나 위축되어 90% 이상의 폐사율을 나타내기도 한다', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IB003&fshCd=611301', '세균성질병');
+insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('트리코이노시스', '수질이 좋지 못할때 아가미에서 점액질이 분비되고 표피가 벗겨지거나 궤양이 생성', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IP001&fshCd=611301', '기생충성질병');
+insert into dis_search (ds_name, ds_simple, ds_url, ds_cause) values ('활주세균증', '체색흑화가 특징적이며 주둥이나 지느러미가 부식되고 결손 된다. 두부, 몸 및 지느러미가 붉어지고 출혈과 궤양이 생긴다, 단독으로 발생하지 않고 다른 질병과 혼합하여 발병한다.', 'https://www.nifs.go.kr/fishguard/disease01_view?dssCd=IB002&fshCd=611301', '세균성질병');
+
 commit;
 
 select * from dis_search;				

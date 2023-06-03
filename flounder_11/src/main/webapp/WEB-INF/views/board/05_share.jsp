@@ -1,4 +1,5 @@
 
+<%@page import="org.springframework.web.context.request.SessionScope"%>
 </html><%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -21,6 +22,9 @@ pageEncoding="UTF-8"%>
     src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
  
 		<script type="text/javascript">
+		
+	
+		
 		$(document).ready(()=>{
 			var pageForm = $("#pageForm");
 			// 상세보기로 이동
@@ -32,7 +36,9 @@ pageEncoding="UTF-8"%>
 				pageForm.attr("action", "${cpath}/share_detail");
 				pageForm.attr("method", "post");
 				pageForm.submit(); // 폼을 전송
-			 });
+	
+				
+				});
 			});
 		</script>
 

@@ -53,4 +53,13 @@
 				
 	</select>
 
+	<delete id="remove" parameterType="int">
+		delete from community where c_id = #{c_id}
+	</delete>
+
+
+
+
+
+
 </mapper>
