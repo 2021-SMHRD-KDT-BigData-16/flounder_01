@@ -39,7 +39,36 @@ pageEncoding="UTF-8"%>
      .table-bordered td {
         text-align: center;
     }
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f2f2f2; /* Set your desired background color */
+  }
 
+  .table thead th {
+    background-color: #5AD5C8;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #5AD5C8;
+  }
+
+  .table tbody td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+     background-color: white;
+  }
+   .btn-submit {
+    width: 100%;
+    background-color: #5AD5C8; /* Set your desired background color */
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+  }
         
     </style>
 </head>
@@ -72,39 +101,30 @@ pageEncoding="UTF-8"%>
                     
                     </br>
                 <table class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <td> 병명 </td>
-                      <td> 증상 </td>
-                      <td> 원인체 </td>
-                      <!-- <td> 상세증상 </td> -->
-                      <td> URL 이동 </td>
-                    </tr>
-                  </thead>
+  <thead>
+  <tr>
+    <th style="width: 25%; vertical-align: middle;">병명</th>
+    <th style="width: 50%; vertical-align: middle;">증상</th>
+    <th style="width: 15%; vertical-align: middle;">원인체</th>
+    <th style="width: 10%; vertical-align: middle;">URL 이동</th>
+  </tr>
+</thead>
                   
-                  <tbody>
-                    <c:forEach var="vo" items="${list_search}">
-                      <tr>
-                        <td> ${vo.ds_name} </td>
-                        <td> ${vo.ds_simple}</td>
-                        <td> ${vo.ds_cause}</td>
-                        <!-- <td><button onclick="display()">상세보기</button></td> -->
-                        <!-- <td><a href="${vo.ds_url}">상세보기</a></td> -->
-                        <form action="${cpath}/search_detail" method="post" class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px ">
-                        	<input type="hidden" name="ds_id" value="${vo.ds_id}">
-                        	<td><button type="submit"> 상세<br>보기</button></td>
-                        </form>
-                      </tr>
-		                 
-		                 <!--  
-		                 	<tr>    
-	                      <td id="${vo.ds_id}" style="display: none">url창 생성</td>
-	                    </tr> 
-											-->
-											
-                    </c:forEach>
-                    
-                  </tbody>								
+                 <tbody>
+  <c:forEach var="vo" items="${list_search}">
+    <tr>
+      <td style="vertical-align: middle;">${vo.ds_name}</td>
+      <td style="vertical-align: middle;">${vo.ds_simple}</td>
+      <td style="vertical-align: middle;">${vo.ds_cause}</td>
+      <form action="${cpath}/search_detail" method="post" class="form-inline my-2 my-lg-0" style="position: absolute; right: 0; margin-right : 20px;">
+        <input type="hidden" name="ds_id" value="${vo.ds_id}">
+        <td style="padding: 5px; vertical-align: middle;">
+          <button type="submit" class="btn-submit">상세보기</button>
+        </td>
+      </form>
+    </tr>
+  </c:forEach>
+</tbody>								
                 </table>
           				
 								</div>

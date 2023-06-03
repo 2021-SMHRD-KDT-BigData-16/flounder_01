@@ -132,6 +132,8 @@ table.table-bordered tbody tr {
 .feed-box {
   border: 1px solid #5AD5C8;
 }
+
+
 </style>
 </head>
  <body>
