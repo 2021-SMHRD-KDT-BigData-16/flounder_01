@@ -93,6 +93,8 @@ public class BoardController {
 		return "board/06_share_detail";
 	}
 	
+
+	
 	@RequestMapping("/history_detail")
 	public String history_detail(int dd_id, Model model, HttpSession session) {
 				
