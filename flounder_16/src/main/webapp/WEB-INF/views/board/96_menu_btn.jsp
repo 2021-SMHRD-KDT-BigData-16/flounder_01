@@ -73,10 +73,10 @@
     element.textContent = text;
   }
 </script>
-    </ul>
+     </ul>
     <form class="form-inline my-2 my-lg-0" style="position: absolute; right: 20px;">
       <button class="btn btn-outline-light my-2 my-sm-0" type="button" data-toggle="collapse" data-target="#menuCollapse" aria-controls="menuCollapse" aria-expanded="false">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span> 
       </button>
     </form>
 

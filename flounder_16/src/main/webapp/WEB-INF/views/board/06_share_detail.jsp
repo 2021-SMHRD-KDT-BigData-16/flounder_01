@@ -82,7 +82,7 @@
 							<h4 class="card-title">게시물 상세</h4>
 							<table class="table">
 								<tr>
-									<td><img alt="이미지" height=500px src="${cpath}/resources${share_detail.img_path}"></td>
+									<td><img alt="이미지" height=400px src="${cpath}/resources${share_detail.img_path}"></td>
 								</tr>
 								<tr>
 									<td style="width: 100px">제목</td>

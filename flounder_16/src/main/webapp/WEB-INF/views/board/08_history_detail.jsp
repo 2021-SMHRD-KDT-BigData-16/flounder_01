@@ -33,7 +33,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 	background-color: white;
 	padding: 10px;
