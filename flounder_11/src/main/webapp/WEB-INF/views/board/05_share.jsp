@@ -22,9 +22,7 @@ pageEncoding="UTF-8"%>
     src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
  
 		<script type="text/javascript">
-		
-	
-		
+
 		$(document).ready(()=>{
 			var pageForm = $("#pageForm");
 			// 상세보기로 이동
@@ -36,8 +34,6 @@ pageEncoding="UTF-8"%>
 				pageForm.attr("action", "${cpath}/share_detail");
 				pageForm.attr("method", "post");
 				pageForm.submit(); // 폼을 전송
-	
-				
 				});
 			});
 		</script>

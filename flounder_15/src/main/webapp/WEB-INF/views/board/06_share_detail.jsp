@@ -95,7 +95,10 @@ $(document).ready(function() {
 
 								<!-- 로그인한 아이디와 게시물의 아이디가 같을경우 --> 
 								<c:if test="${mvo.m_email eq share_detail.w_email}">
-									<button data-btn="modify" class="btn btn-sm btn-primary">수정</button>
+									<button data-btn="modify" class="btn btn-sm btn-primary">
+										<input type="hidden" value="${share_detail.c_id}">
+										수정
+									</button>
 									<button data-btn="remove" class="btn btn-sm btn-primary">
 										<input type="hidden" value="${share_detail.c_id}">
 										삭제
