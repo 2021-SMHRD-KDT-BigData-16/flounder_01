@@ -124,4 +124,13 @@ public class TestController {
 			
 			return "board/52_FileUpload_drag";
 	   }
+	   
+	   @RequestMapping("/writer")
+	   public String testwriter() {
+			logger.info(" TestController : {}.", "test00");
+			
+			return "board/10_share_writer";
+	   }
+
+	   
 }

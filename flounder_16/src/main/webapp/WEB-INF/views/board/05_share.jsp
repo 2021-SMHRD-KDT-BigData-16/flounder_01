@@ -48,6 +48,25 @@
 	}
 }
 </style>
+
+<script type="text/javascript">
+
+      $(document).ready(()=>{
+         var pageForm = $("#pageForm");
+         // 상세보기로 이동
+         $(".move").on("click", function(e){ 
+            e.preventDefault(); // a tag의 고유한 기능을 막는 방법
+            var c_id = $(this).attr("href");
+            var tag = "<input type='hidden' name='c_id' value='"+c_id+"'>";
+            pageForm.append(tag);
+            pageForm.attr("action", "${cpath}/share_detail");
+            pageForm.attr("method", "post");
+            pageForm.submit(); // 폼을 전송
+            });
+         });
+      </script>
+
+
 </head>
 <body>
     <jsp:include page="96_menu_btn.jsp" />
@@ -61,7 +80,10 @@
                                 <div class="col-5 mb-4">
                                     <div class="card" style="padding: 20px;">
                                         <div class="card-img-container" style="width: 490px; height: 300px; overflow: hidden;">
-                                            <img src="${cpath}/resources${vo.img_path}" class="card-img-top" alt="이미지" style="width: 100%; height: 100%; object-fit: cover;">
+                                            <a class="move" href="${vo.c_id}">
+                                    <img src="${cpath}/resources${vo.img_path}" class="card-img-top" alt="이미지" style="width: 100%; height: 100%; object-fit: cover;">
+                                 </a>
+
                                         </div>
                                         <h5 class="card-text">작성자: ${vo.m_name}</h5>
                                         <p class="card-title">${vo.title}</p>
@@ -71,6 +93,11 @@
                                     </div>
                                 </div>
                             </c:forEach>
+                            
+                             <form id="pageForm" >
+                     </form>
+                            
+                            
                         </div>
                     </div>
                 </div>
@@ -84,7 +111,7 @@
         <div class="row justify-content-end">
             <div class="col-lg-9">
                 <div class="text-center">
-                    <a href="${cpath}/write" class="btn btn-primary">글쓰기</a>
+                    <a href="${cpath}/writer" class="btn btn-primary">글쓰기</a>
                 </div>
             </div>
         </div>

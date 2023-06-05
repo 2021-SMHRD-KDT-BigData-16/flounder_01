@@ -107,6 +107,8 @@ public class BoardController {
 		
 		return "board/08_history_detail";
 	}
+
+	
 	
 	@RequestMapping("/remove")
 	public String remove(int c_id) { // ?num=n
