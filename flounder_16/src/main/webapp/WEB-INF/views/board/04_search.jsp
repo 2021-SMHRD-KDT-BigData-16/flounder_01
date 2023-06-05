@@ -100,15 +100,15 @@ pageEncoding="UTF-8"%>
                         </form>
                     
                     </br>
-                <table class="table table-bordered table-hover">
+<table class="table table-bordered table-hover" style="border-color: white;">
   <thead>
-  <tr>
-    <th style="width: 25%; vertical-align: middle;">병명</th>
-    <th style="width: 50%; vertical-align: middle;">증상</th>
-    <th style="width: 15%; vertical-align: middle;">원인체</th>
-    <th style="width: 10%; vertical-align: middle;">URL 이동</th>
-  </tr>
-</thead>
+    <tr>
+      <th style="width: 25%; vertical-align: middle; border-color: white;">병명</th>
+      <th style="width: 50%; vertical-align: middle; border-color: white;">증상</th>
+      <th style="width: 15%; vertical-align: middle; border-color: white;">원인체</th>
+      <th style="width: 10%; vertical-align: middle; border-color: white;">URL 이동</th>
+    </tr>
+  </thead>
                   
                  <tbody>
   <c:forEach var="vo" items="${list_search}">

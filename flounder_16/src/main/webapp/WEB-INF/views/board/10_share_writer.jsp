@@ -1,27 +1,70 @@
-
-</html><%@ page language="java" contentType="text/html; charset=UTF-8"
+</html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
-<title>게시글 작성</title>
+<title>08 history detail</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-    
-<jsp:include page="96_menu_btn.jsp" />
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<div class="container">
+<style>
+.container {
+	border: 1px solid #5AD5C8;
+	border-radius: 10px;
+	
+}
+
+.card2 {
+	margin-bottom: 20px;
+	border-radius: 10px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 0 auto;
+	background-color: white;
+	padding: 10px;
+	border: 1px solid #5AD5C8;
+	
+}
+
+
+
+.btn-primary {
+	background-color: #5AD5C8;
+	border-color: #5AD5C8;
+	color: white;
+}
+ .btn-primary:hover {
+    background-color: transparent;
+    color: #5AD5C8;
+}
+ 
+</style>
+</head>
+
+<body>
+	<jsp:include page="96_menu_btn.jsp" />
+
+	<div class="card-body">
+		<div class="row">
+			<div class="col-lg-9 " >
+				<div class="card">
+			
 	<div class="row justify-content-center mt-4">
 		<div class="col-lg-6">
 			<div class="card">
@@ -41,13 +84,29 @@
 							<label for="media">미디어 (이미지 또는 동영상)</label>
 							<input type="file" class="form-control-file" id="media" name="media" accept="image/*,video/*" required>
 						</div>
-						<button type="submit" class="btn btn-primary">작성</button>
+						<div class="d-flex justify-content-end">
+										<button data-btn="list" class="btn btn-sm btn-primary mr-2">목록</button>
+										<button type="submit" class="btn btn-sm btn-primary mr-2">제출</button>
+									</div>
 					</form>
+							
 				</div>
 			</div>
+				<br />		
 		</div>
 	</div>
 </div>
+					
+							
+						</div>
+	
+			
+			<div class="col-lg-3">
+					<jsp:include page="97_right.jsp" />
+			</div>
+		</div>
+	</div>
 
 </body>
+
 </html>

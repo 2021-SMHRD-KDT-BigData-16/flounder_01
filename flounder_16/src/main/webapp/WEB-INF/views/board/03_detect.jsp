@@ -78,8 +78,20 @@ pageEncoding="UTF-8"%>
   height: 100%;
   box-sizing: border-box;
 }
-
-
+.btn-primary {
+	background-color: #5AD5C8;
+	border-color: #5AD5C8;
+	color: white;
+	width: 300%; 
+	height: 40px; 
+	font-size: 0.8em;
+}
+.btn-primary:active,
+  .btn-primary:focus,
+  .btn-primary:hover {
+    background-color: transparent;
+    color: #5AD5C8;
+  }
   </style>
   
   <script>
@@ -119,12 +131,12 @@ pageEncoding="UTF-8"%>
               </div>
               <div class="form-group">
                 <br/>               
-                <label>내용:</label>
+                <label>증상 입력:</label>
                 <br />
                 <textarea rows="3" name="dd_comment" id="content" class="form-control"></textarea>
               </div>
               <div class="form-group3">
-                <button type="submit" class="btn btn-sm btn-primary" style="width: 300%; height: 40px; font-size: 0.8em; background-color:#5AD5C8">등록</button>
+                <button type="submit" class="btn btn-sm btn-primary mr-2">등록 하기</button>
               </div>
             </div>
           </div>

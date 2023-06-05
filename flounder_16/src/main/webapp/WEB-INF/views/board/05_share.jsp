@@ -29,8 +29,13 @@
 
 .btn-primary {
 	background-color: #5AD5C8;
+	border-color: #5AD5C8;
+	color: white;
 }
-
+ .btn-primary:hover {
+    background-color: transparent;
+    color: #5AD5C8;
+}
 .left-section {
 	display: flex;
 	flex-wrap: wrap;
@@ -94,7 +99,7 @@
                                 </div>
                             </c:forEach>
                             
-                             <form id="pageForm" >
+                             <form id="pageForm">
                      </form>
                             
                             
@@ -111,7 +116,7 @@
         <div class="row justify-content-end">
             <div class="col-lg-9">
                 <div class="text-center">
-                    <a href="${cpath}/writer" class="btn btn-primary">글쓰기</a>
+                    <a href="${cpath}/writer" class="btn btn-sm btn-primary mr-2">글쓰기</a>
                 </div>
             </div>
         </div>
