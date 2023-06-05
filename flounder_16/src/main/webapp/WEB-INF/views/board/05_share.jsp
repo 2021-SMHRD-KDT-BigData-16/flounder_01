@@ -88,8 +88,8 @@
                                             <a class="move" href="${vo.c_id}">
                                     <img src="${cpath}/resources${vo.img_path}" class="card-img-top" alt="이미지" style="width: 100%; height: 100%; object-fit: cover;">
                                  </a>
-
                                         </div>
+																					<br/>
                                         <h5 class="card-text">작성자: ${vo.m_name}</h5>
                                         <p class="card-title">${vo.title}</p>
                                         <p class="card-text">

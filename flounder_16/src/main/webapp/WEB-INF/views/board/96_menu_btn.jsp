@@ -33,13 +33,13 @@
   </button>
   <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
     <ul class="navbar-nav">
-    	<c:if test="${!empty mvo}">
-	    	<li class="nav-item">
-	        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '질병감지')" onMouseOut="showKoreanText(this, 'Disease Detection')" onClick="location.href='./03'">Disease Detection</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '히스토리')" onMouseOut="showKoreanText(this, 'History')" onClick="location.href='./07'">Disease History</a>
-	      </li>
+       <c:if test="${!empty mvo}">
+          <li class="nav-item">
+           <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '질병감지')" onMouseOut="showKoreanText(this, 'Disease Detection')" onClick="location.href='./03'">Disease Detection</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '히스토리')" onMouseOut="showKoreanText(this, 'History')" onClick="location.href='./07'">Disease History</a>
+         </li>
       </c:if>
       <li class="nav-item">
         <a class="nav-link" href="#" onMouseOver="showKoreanText(this, '질병정보')" onMouseOut="showKoreanText(this, 'Disease information')" onClick="location.href='./04'">Disease Search</a>
