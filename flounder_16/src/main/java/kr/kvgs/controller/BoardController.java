@@ -108,6 +108,14 @@ public class BoardController {
 		return "board/08_history_detail";
 	}
 
+	@RequestMapping("/history_remove")
+	public String history_remove(int dd_id)
+	{
+		mapper.history_remove(dd_id);
+		return "redirect:/history";
+	}
+	
+	
 	
 	
 	@RequestMapping("/remove")

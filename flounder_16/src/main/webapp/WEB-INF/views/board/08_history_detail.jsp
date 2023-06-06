@@ -6,6 +6,28 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("button").on("click", function(e) {
+			var btn = $(this).data("btn"); // data() = data-에 있는 이름
+			var formData = $("#frm");
+			if (btn == "remove") 
+			{
+				//location.href="${cpath}/remove?num="+${vo.num};
+				formData.attr("action", "${cpath}/history_remove"); // ?num=${vo.num}
+				formData.attr("method", "get");
+			}
+			formData.submit(); // 전송
+		})
+	});
+</script>
+
+
 <head>
 <title>08 history detail</title>
 <meta charset="utf-8">
@@ -67,11 +89,27 @@
 	border-color: #5AD5C8;
 	color: white;
 }
- .btn-primary:hover {
-    background-color: transparent;
-    color: #5AD5C8;
+
+.btn-primary:hover {
+	background-color: transparent;
+	color: #5AD5C8;
 }
- 
+  .table {
+        border-collapse: collapse;
+    }
+
+    .table th,
+    .table td {
+        border: none; /* 테이블 선 제거 */
+    }
+
+    .table th {
+        background-color: #f8f9fa;
+    }
+       .table-wrapper {
+        width: 30%;
+        margin: auto;
+    }
 </style>
 </head>
 
@@ -82,17 +120,17 @@
 		<div class="row">
 			<div class="col-lg-9">
 				<div class="card">
-				<br />
+					<br />
 					<div class="card-body">
 						<div class="container">
 							<br />
 							<div class="row">
-							
+
 								<div class="col-md-6">
 									<div class="card2">
 										<!-- First image here -->
 										<img alt="이미지"
-											style="object-fit: cover; width: 100%; height: auto; margin-bottom: 10px;"
+											style="object-fit: cover; width: 100%; height: auto; margin-bottom: 10px; margin: auto;"
 											src="${cpath}/resources${history_detail.org_img}">
 									</div>
 								</div>
@@ -100,7 +138,7 @@
 									<div class="card2">
 										<!-- Second image here -->
 										<img alt="이미지"
-											style="object-fit: cover; width: 100%; height: auto; margin-bottom: 10px;"
+											style="object-fit: cover; width: 100%; height: auto; margin-bottom: 10px; margin: auto;"
 											src="${cpath}/resources${history_detail.dt_img}">
 									</div>
 								</div>
@@ -109,50 +147,49 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card2">
-										<!-- Feed content here -->
-										<table class="table">
-											<tr>
-												<td style="width: 100px">제목</td>
-												<!-- Add the title content here -->
-											</tr>
-											<tr>
-												<td>내용</td>
-												<td class="content-text">${fn:replace(history_detail.dd_comment, newLineChar, "<br/>")}</td>
-												<!-- vo.content에서 \n를 찾아 <br>로 바꾼다. -->
-											</tr>
-											<tr>
-												<td>작성자</td>
-												<td>${history_detail.m_name}</td>
-											</tr>
-											<tr>
-												<td>작성일</td>
-												<td><fmt:formatDate value="${history_detail.dd_date}"
-														pattern="yyyy-MM-dd HH:mm:ss" /></td>
-											</tr>
-										</table>
-										<form id="frm">
-											<button data-btn="list" class="btn btn-sm btn-primary">목록</button>
-											<c:if test="${mvo.m_email eq share_detail.w_email}">
-												<button data-btn="modify" class="btn btn-sm btn-primary">수정</button>
-												<button data-btn="remove" class="btn btn-sm btn-primary">삭제</button>
-											</c:if>
-											<c:if test="${!empty mvo}">
-												<button data-btn="reply" class="btn btn-sm btn-primary">답글</button>
-											</c:if>
-										</form>
+										<div style="width: 30%;">
+											<table class="table text-center">
+												<!-- Feed content here -->
+												<table class="table text-center">
+
+													<tr>
+														<td>내용</td>
+														<td class="content-text">${fn:replace(history_detail.dd_comment, newLineChar, "<br/>")}</td>
+														<!-- vo.content에서 \n를 찾아 <br>로 바꾼다. -->
+													</tr>
+													<tr>
+														<td>작성자</td>
+														<td>${history_detail.m_name}</td>
+													</tr>
+													<tr>
+														<td>작성일</td>
+														<td><fmt:formatDate value="${history_detail.dd_date}"
+																pattern="yyyy-MM-dd HH:mm:ss" /></td>
+													</tr>
+												</table>
+												</div>
+												<form id="frm1" action="${cpath}/history" method="GET">
+													<button type="submit" data-btn="list" class="btn btn-sm btn-primary">목록</button>
+												</form>
+												<button type = "submit" data-btn="remove" class="btn btn-sm btn-primary">삭제</button>
+	
+												
+												<form id="frm">
+													<input type="hidden" id="dd_id" name="dd_id" value="${history_detail.dd_id}">
+												</form>
+										</div>
 									</div>
-								</div>
 							</div>
-							<br />
-							
+							<br/>
+
 						</div>
-							<br />
+						<br/>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-lg-3">
-					<jsp:include page="97_right.jsp" />
+				<jsp:include page="97_right.jsp" />
 			</div>
 		</div>
 	</div>

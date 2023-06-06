@@ -28,5 +28,7 @@ public interface BoardMapper {
 	public HistoryDetail getHistoryDetail(int dd_id);
 
 	public void remove(int c_id);
+
+	public void history_remove(int dd_id);
 	
 }
