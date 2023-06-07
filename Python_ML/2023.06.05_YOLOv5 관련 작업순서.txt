@@ -80,6 +80,12 @@ conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvi
 python -m ipykernel install --user --name yolov5 --display-name yolov5
 
 
+
+conda install jupyter notebook
+
+python -m ipykernel install --user --name yolov8 --display-name yolov8
+
+
 18. 아나콘다 가상환경 만들기
 
 
@@ -92,4 +98,11 @@ yolov5 에서 경로로 인한 문제 발생
   - 이것을 사용해서 predict 를 해야 함. 이것이 아닌 것은 다른 모델임.
 
 
+에러 
+IOPub data rate exceeded. The notebook server will temporarily stop sending output to the client in order to avoid crashing it. To change this limit, set the config variable `--
+
+해결 방법
+jupyter notebook --NotebookApp.iopub_data_rate_limit=1.0e10
+
+jupyter notebook --NotebookApp.iopub_data_rate_limit=3
 
